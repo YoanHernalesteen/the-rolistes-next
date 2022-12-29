@@ -3,7 +3,7 @@ import { faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classes from '../Footer.module.css';
 import { Row, Col } from 'react-bootstrap';
-import globalClasses from '../../../App.module.css';
+import globalClasses from '../../../styles/styles.css';
 
 
 const Contact = (props) => {

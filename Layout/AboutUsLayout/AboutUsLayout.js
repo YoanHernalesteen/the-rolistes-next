@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import Posts from '../../../containers/Posts/Posts';
 import { Col, Container, Row } from 'react-bootstrap';
 import Footer from '../../../components/Footer/Footer';
-import globalClasses from '../../../App.module.css';
+import globalClasses from '../../../styles/styles.css';
 import { Helmet } from 'react-helmet';
 
 const AboutUsLayout = (props) => (

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import driveThruRPGButton from '../../../assets/images/Icon_Drivethru.png';
 import { Row, Col } from 'react-bootstrap';
 import classes from './Support.module.css';
-import globalClasses from '../../../App.module.css';
+import globalClasses from '../../../styles/styles.css';
 
 const Support = (props) => {
     return (

@@ -6,7 +6,7 @@ import spotifyButton from '../../../assets/images/Buttons_Spotify_BnW.png';
 import stitcherButton from '../../../assets/images/Buttons_Stitcher_BnW.png';
 import podchaserButton from '../../../assets/images/Buttons_Podchaser_BnW.png';
 import RSSButton from '../../../assets/images/Buttons_RSS_BnW.png';
-import globalClasses from '../../../App.module.css';
+import globalClasses from '../../../styles/styles.css';
 
 
 const Listen = (props) => {

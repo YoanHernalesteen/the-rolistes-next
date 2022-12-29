@@ -1,7 +1,7 @@
 
 import { Fragment } from 'react';
 import classes from './TeamPost.module.css';
-import globalClasses from '../../App.module.css';
+import globalClasses from '../../styles/styles.css';
 import { Col, Row } from 'react-bootstrap';
 
 const TeamPost = (props) => {

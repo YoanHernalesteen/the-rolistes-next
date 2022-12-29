@@ -17,7 +17,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classes from "./Follow.module.css";
 import podchaserButton from "../../../assets/images/Icon_Podchaser.png";
 import { Row, Col } from "react-bootstrap";
-import globalClasses from "../../../App.module.css";
+import globalClasses from "../../../styles/styles.css";
 
 const Follow = (props) => {
   return (

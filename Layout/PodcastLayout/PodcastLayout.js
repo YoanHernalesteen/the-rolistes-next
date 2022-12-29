@@ -8,7 +8,7 @@ import Footer from '../../../components/Footer/Footer';
 import PaginationList from '../../../components/UI/PaginationList/PaginationList';
 import * as actions from '../../../store/actions/index';
 import { connect } from 'react-redux';
-import globalClasses from '../../../App.module.css';
+import globalClasses from '../../../styles/styles.css';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';

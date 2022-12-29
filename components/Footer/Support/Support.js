@@ -6,7 +6,7 @@ import patreonButton from '../../../assets/images/Buttons_Patreon_BnW.png';
 import DriveThruRPGButton from '../../../assets/images/Buttons_DriveThruRPG_BnW.png';
 import itchIOButton from '../../../assets/images/Buttons_Itch.io_BnW.png';
 import classes from '../Footer.module.css';
-import globalClasses from '../../../App.module.css';
+import globalClasses from '../../../styles/styles.css';
 
 const Support = (props) => {
     return (

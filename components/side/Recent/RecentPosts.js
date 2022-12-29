@@ -1,6 +1,6 @@
 
 import { Fragment } from 'react';
-import globalClasses from '../../../App.module.css';
+import globalClasses from '../../../styles/styles.css';
 import Spinner from '../../UI/Spinner/Spinner';
 import classes from './RecentPosts.module.css';
 import { Link } from 'react-router-dom';

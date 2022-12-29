@@ -2,7 +2,7 @@
 import { Fragment } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import classes from './ComingSoon.module.css';
-import globalClasses from '../../App.module.css';
+import globalClasses from '../../styles/styles.css';
 
 
 const ComingSoon = (props) => (

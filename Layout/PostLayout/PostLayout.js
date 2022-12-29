@@ -7,7 +7,7 @@ import Follow from '../../../components/side/Follow/Follow';
 import Support from '../../../components/side/Support/Support';
 import PaginationList from '../../../components/UI/PaginationList/PaginationList';
 import Footer from '../../../components/Footer/Footer';
-import globalClasses from '../../../App.module.css';
+import globalClasses from '../../../styles/styles.css';
 import { useParams } from 'react-router-dom';
 import Subscribe from '../../../components/side/Subscribe/Subscribe';
 

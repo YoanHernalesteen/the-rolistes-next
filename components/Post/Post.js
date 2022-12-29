@@ -2,7 +2,7 @@
 import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import classes from './Post.module.css';
-import globalClasses from '../../App.module.css'
+import globalClasses from '../../styles/styles.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 

@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import classes from './AboutPost.module.css';
-import globalClasses from '../../App.module.css';
+import globalClasses from '../../styles/styles.css';
 
 const AboutPost = (props) => {
 

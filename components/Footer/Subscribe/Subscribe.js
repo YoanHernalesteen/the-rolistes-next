@@ -2,7 +2,7 @@ import { Fragment } from "react";
 
 import classes from "../Footer.module.css";
 import { Row, Col } from "react-bootstrap";
-import globalClasses from "../../../App.module.css";
+import globalClasses from "../../../styles/styles.css";
 
 const Subscribe = (props) => {
   return (

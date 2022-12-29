@@ -9,7 +9,7 @@ import Support from '../../../components/side/Support/Support';
 import Footer from '../../../components/Footer/Footer';
 import * as actions from '../../../store/actions/index';
 import { connect } from 'react-redux';
-import globalClasses from '../../../App.module.css';
+import globalClasses from '../../../styles/styles.css';
 import { Helmet } from 'react-helmet';
 import Subscribe from '../../../components/side/Subscribe/Subscribe';
 

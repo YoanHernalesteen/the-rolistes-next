@@ -1,31 +1,29 @@
-import { Fragment, useState } from 'react';
-import Toolbar from '../components/Navigation/Toolbar/Toolbar';
-import SideDrawer from '../components/Navigation/SideDrawer/SideDrawer';
+import { Fragment, useState } from "react";
+import Toolbar from "../components/Navigation/Toolbar/Toolbar";
+import SideDrawer from "../components/Navigation/SideDrawer/SideDrawer";
+import Footer from "../components/Footer/Footer";
 
+const Layout = (props) => {
+  const [sideDrawerIsVisible, setSideDrawerIsVisible] = useState(false);
 
-const Layout = props => {
+  const sideDrawerClosedHandler = () => {
+    setSideDrawerIsVisible(false);
+  };
 
-    const [sideDrawerIsVisible, setSideDrawerIsVisible] = useState(false);
+  const sideDrawerToggleHandler = () => {
+    setSideDrawerIsVisible(!sideDrawerIsVisible);
+  };
 
-    const sideDrawerClosedHandler = () => {
-        setSideDrawerIsVisible(false);
-    }
+  return (
+    <Fragment id="top">
+      <Toolbar drawerToggleClicked={sideDrawerToggleHandler} />
+      <SideDrawer open={sideDrawerIsVisible} closed={sideDrawerClosedHandler} />
 
-    const sideDrawerToggleHandler = () => {
-        setSideDrawerIsVisible(!sideDrawerIsVisible);
-    }
+      <main>{props.children}</main>
 
-    return (
-        <Fragment id="top">
-            <Toolbar drawerToggleClicked = {sideDrawerToggleHandler}/>
-            <SideDrawer open={sideDrawerIsVisible} closed={sideDrawerClosedHandler}/>
-
-            <main>                
-                {props.children}           
-            </main>  
-        </Fragment>
-    )
-}
-
+      <Footer />
+    </Fragment>
+  );
+};
 
 export default Layout;
