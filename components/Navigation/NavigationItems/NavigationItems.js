@@ -3,14 +3,14 @@ import classes from './NavigationItems.module.css';
 import NavigationItem from './NavigationItem/NavigationItem';
 import Logo from '../../Logo/Logo';
 import patreonButton from '../../../assets/images/become_a_patron_button_BnW - Black.png';
-import { NavLink } from 'react-router-dom';
+import Link from 'next/link';
 
 const navigationItems= (props) => (
     <ul className={classes.NavigationItems}>
         
-        <NavLink to="/" exact>
+        <Link href="/" exact>
             <Logo/>
-        </NavLink>    
+        </Link>    
         
         <span className={classes.SpacingNav}/>
         <NavigationItem link="/news">News</NavigationItem>

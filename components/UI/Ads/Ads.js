@@ -1,6 +1,5 @@
 
 import { Fragment } from 'react';
-import Aux from '../../../hoc/Auxiliary/Auxiliary';
 import adsIMG from '../../../assets/images/Banner_DriveThruRPG_BnW.png';
 import classes from './Ads.module.css';
 import { Row, Col } from 'react-bootstrap';
