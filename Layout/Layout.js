@@ -15,13 +15,18 @@ const Layout = (props) => {
   };
 
   return (
-    <Fragment id="top">
-      <Toolbar drawerToggleClicked={sideDrawerToggleHandler} />
-      <SideDrawer open={sideDrawerIsVisible} closed={sideDrawerClosedHandler} />
+    <Fragment>
+      <div id="top">
+        <Toolbar drawerToggleClicked={sideDrawerToggleHandler} />
+        <SideDrawer
+          open={sideDrawerIsVisible}
+          closed={sideDrawerClosedHandler}
+        />
 
-      <main>{props.children}</main>
+        <main>{props.children}</main>
 
-      <Footer />
+        <Footer />
+      </div>
     </Fragment>
   );
 };

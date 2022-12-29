@@ -11,22 +11,22 @@ import Support from './Support/Support';
 import Subscribe from './Subscribe/Subscribe';
 
 const Footer = (props) => {
+    
+    // window.onscroll = function() {toggleFooter(this)};
 
-    window.onscroll = function() {toggleFooter(this)};
-
-	const toggleFooter = () => {
+	// const toggleFooter = () => {
         
-        const elem = document.getElementById("dynamicFooter") ;
+    //     const elem = document.getElementById("dynamicFooter") ;
 
-        if(typeof elem !== 'undefined' && elem !== null) {
+    //     if(typeof elem !== 'undefined' && elem !== null) {
 
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                document.getElementById("dynamicFooter").className = classes.navUp;
-            } else {
-                document.getElementById("dynamicFooter").className = classes.navDown;
-            }
-        }
-    };
+    //         if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    //             document.getElementById("dynamicFooter").className = classes.navUp;
+    //         } else {
+    //             document.getElementById("dynamicFooter").className = classes.navDown;
+    //         }
+    //     }
+    // };
 
     return (
         <Fragment>

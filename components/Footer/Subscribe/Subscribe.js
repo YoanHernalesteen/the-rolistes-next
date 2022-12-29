@@ -2,15 +2,15 @@ import { Fragment } from "react";
 
 import classes from "../Footer.module.css";
 import { Row, Col } from "react-bootstrap";
-import globalClasses from "../../../styles/styles.css";
+// import globalClasses from "../../../styles/styles.css";
 
 const Subscribe = (props) => {
   return (
     <Fragment>
-      <div className={globalClasses.item_box_footer}>
+      <div className={"item_box_footer"}>
         <Row>
           <Col xs={12}>
-            <h2 className={globalClasses.section_title_footer}>Newsletter</h2>
+            <h2 className={"section_title_footer"}>Newsletter</h2>
           </Col>
         </Row>
 
