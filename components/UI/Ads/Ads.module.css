@@ -1,0 +1,23 @@
+.ads {
+    display:block;
+    margin: 0 auto;
+    height:120px;
+    width:auto;
+}
+
+.adsContainer{
+    background-color: #000000;
+}
+
+
+@media screen and (max-width: 768px){
+	.ads {
+		height:100px;
+	}
+}
+
+@media screen and (max-width: 576px){
+	.ads {		
+		height:80px;
+	}
+}

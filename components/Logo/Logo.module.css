@@ -1,0 +1,28 @@
+.LogoImg {
+    margin: 10px 0;
+    box-sizing: border-box;
+    display:block;
+    height:4rem; 
+    width: auto;
+}
+
+.LogoSection{
+    display:inherit;
+}
+
+@media screen and (max-width: 992px){
+
+    .LogoImg {        
+        height:3rem; 
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+    .LogoImg {        
+        height:2.5rem; 
+        width: auto;
+    }
+}
+

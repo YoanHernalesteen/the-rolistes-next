@@ -1,0 +1,20 @@
+.item_box_comingsoon{
+    font-size:14px;
+}
+
+.item_box_comingsoon>h2{
+    display:inline;
+    font-size:17px;
+    margin-right: 15px;
+}
+
+.date {
+	font-size:13px;
+	display:inline;
+}
+
+.kunz_img {
+    max-width:200px;
+    margin-bottom: 1.5rem;
+}
+

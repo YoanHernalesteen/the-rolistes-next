@@ -1,0 +1,81 @@
+.SideLink, .SideLink:hover{
+	display:inline-block;
+	box-sizing: border-box;
+	transition: background-color 0.4s ease;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 5px;	
+	margin-bottom: 1.5rem;
+}
+
+.side_title{
+	margin: 0 0 5px ;
+}
+
+.side_icons{
+	margin-left: 2px;
+	height: 50px;
+	width: 100%;
+}
+
+.SideLink>span{
+	padding-top: 2px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 7px 0;
+    font-size: 1.6em;
+}
+
+.SideLink{
+	background-color: #FFFFFF;
+	color:#000000;
+}
+
+.SideLinkText{ 
+    display:inline-block;
+	box-sizing: border-box;   
+    transition: background-color 0.4s ease;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color:var(--secondary-color);
+    font-weight: bold;
+}
+ 
+.SideLinkText>span{	
+    line-height: 40px;
+    padding: 0px;
+    margin: 10px;
+} 
+
+.SideLinkText:hover{	
+    background-color: var(--secondary-color);
+	color:var(--main-color);
+}
+
+.SideLink:hover{
+	background-color: #000000;
+    color:#FFFFFF;
+}
+
+.sideLinkIcon, .sideLinkIcon:hover{
+	transition: filter 0.4s ease;
+}
+
+.sideLinkIcon img{
+    width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 5px;	
+	margin-bottom: 1.5rem;
+}
+
+.sideLinkIcon{
+	color:#FFFFFF;
+}
+
+.sideLinkIcon:hover{
+    filter: invert(97%) sepia(0%) saturate(0%) hue-rotate(133deg) brightness(103%) contrast(108%); 
+    -webkit-filter: invert(97%) sepia(0%) saturate(0%) hue-rotate(133deg) brightness(103%) contrast(108%);
+}

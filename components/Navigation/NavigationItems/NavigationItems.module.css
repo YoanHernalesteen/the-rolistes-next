@@ -1,0 +1,85 @@
+.NavigationItems {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    height:100%;    
+}
+
+.SpacingNav{
+    margin: 10px;
+}
+
+.VerticalLine{
+    display: none;
+}
+
+.supportLink, .supportLink:hover{
+	transition: filter 0.4s ease;
+}
+
+.supportLink img{
+    border-radius: 2px;
+    height:2.5rem; 
+    width: auto;
+    margin-top: 1rem;
+    margin-left: 3.5rem;
+}
+
+.supportLink{
+	color:#000000;
+}
+
+.supportLink:hover{
+    filter: invert(97%) sepia(0%) saturate(0%) hue-rotate(133deg) brightness(103%) contrast(108%); 
+    -webkit-filter: invert(97%) sepia(0%) saturate(0%) hue-rotate(133deg) brightness(103%) contrast(108%);
+}
+
+
+
+@media screen and (min-width: 768px){
+    .NavigationItems {
+        flex-flow: row;
+    }
+
+    .VerticalLine{
+        display: inline-block;
+        border-left: 1px solid #ccc;
+        margin: 10px 3px 0;
+        height: 15px;
+    }
+}
+
+@media screen and (max-width: 992px){
+
+    .supportLink img{
+        height:2.3rem; 
+        margin-left: 9px;
+    }
+
+    .VerticalLine{   
+        margin: 10px 2px 0;
+    }
+
+    .SpacingNav{
+        margin: 5px;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+    .supportLink img{
+        height:2.5rem; 
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 1200px){
+
+    .supportLink img{
+        height:2.5rem; 
+        margin-left: 14.75rem;
+    }
+}

@@ -1,0 +1,26 @@
+.Toolbar{
+    box-sizing: border-box;
+}
+
+.Toolbar nav{
+    height: 100%;
+ 
+}
+
+.Logo {
+    height:4rem;
+    width:5.5rem; 
+}
+
+@media (max-width: 768px){
+    .DesktopOnly{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px){
+	.Logo {
+        height:4rem;
+	    width:5.5rem; 
+	}
+}
