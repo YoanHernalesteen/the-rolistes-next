@@ -1,9 +1,8 @@
 
 import { Fragment } from 'react';
-import globalClasses from '../../../styles/styles.css';
 import Spinner from '../../UI/Spinner/Spinner';
 import { Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import classes from './RecommendedPosts.module.css';
 
 const RecommendedPosts = (props) => {
@@ -13,21 +12,21 @@ const RecommendedPosts = (props) => {
 
     recommendedPosts = relatedPosts.map (post => {
         return <Col xs={6} md={6} lg={6} className={classes.cell} key={post["id"]}>
-            <Link to={post.url}>
-                <div className={globalClasses.img_color_animate}>  
+            <Link href={post.url}>
+                <div className={"img_color_animate"}>  
                     <img src={post.cover} alt="Cover Episode"/>
                 </div>  
             </Link>
-            <Link to={post.url}>
-                <h3 className={[globalClasses.section_title, globalClasses.section_title_side, globalClasses.section_title_Reco].join(' ')}>{post["title"]}</h3>    
+            <Link href={post.url}>
+                <h3 className={["section_title", "section_title_side", "section_title_Reco"].join(' ')}>{post["title"]}</h3>    
             </Link>
         </Col>;   
     });    
     
     return (
         <Fragment>
-            <div className={globalClasses.item_box_right}>
-                <h2 className={globalClasses.section_title}>Recommended</h2>
+            <div className={"item_box_right"}>
+                <h2 className={"section_title"}>Recommended</h2>
                 <Row>
                     {recommendedPosts}
                 </Row>         

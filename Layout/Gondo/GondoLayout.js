@@ -9,7 +9,6 @@ import Support from '../../../components/side/Support/Support';
 import Footer from '../../../components/Footer/Footer';
 import * as actions from '../../../store/actions/index';
 import { connect } from 'react-redux';
-import globalClasses from '../../../styles/styles.css';
 import Subscribe from '../../../components/side/Subscribe/Subscribe';
 import Head from 'next/head';
 
@@ -35,7 +34,7 @@ const NewsLayout = (props) =>
             <Container>
                 <Ads/>
                 <Row>                                           
-                    <Col lg={8} xs={12} className={[globalClasses.no_padding_right,globalClasses.no_padding_smallscreen].join(' ')} >                    
+                    <Col lg={8} xs={12} className={["no_padding_right","no_padding_smallscreen"].join(' ')} >                    
                         <Posts 
                             {...props} 
                             type="INTROGONDO"/>
@@ -43,8 +42,8 @@ const NewsLayout = (props) =>
                             <iframe className={classes.gondo_ads} frameborder="0" src="https://itch.io/embed/1185131?border_width=0&amp;border_color=ffffff" width="206" height="165"><a href="https://rolistespod.itch.io/paris-gondo%22%3EParis Gondo - The Life-Saving Magic of Inventorying by Kalum from The Rolistes Podcast"></a></iframe>                       
                         </div>                          
                         
-                        <div className={globalClasses.item_box_left}>
-                            <h2 className={globalClasses.section_title}>Latest Paris Gondo News</h2>
+                        <div className={"item_box_left"}>
+                            <h2 className={"section_title"}>Latest Paris Gondo News</h2>
                             <Posts 
                                 {...props} 
                                 type="GONDO"

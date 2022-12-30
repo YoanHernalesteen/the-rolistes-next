@@ -9,7 +9,6 @@ import Support from '../../../components/side/Support/Support';
 import Footer from '../../../components/Footer/Footer';
 import * as actions from '../../../store/actions/index';
 import { connect } from 'react-redux';
-import globalClasses from '../../../styles/styles.css';
 import Subscribe from '../../../components/side/Subscribe/Subscribe';
 import Head from 'next/head';
 

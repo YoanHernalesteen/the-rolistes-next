@@ -2,15 +2,14 @@
 import { Fragment } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import classes from './Subscribe.module.css';
-import globalClasses from '../../../styles/styles.css';
 
 const Subscribe = (props) => {
     return (
         <Fragment>
-            <div className={[globalClasses.item_box_right,globalClasses.item_box_hide_mobile].join(' ')}>
+            <div className={["item_box_right","item_box_hide_mobile"].join(' ')}>
                 <Row>            
                     <Col xs={12}>
-                        <h2 className={globalClasses.section_title}>Newsletter</h2>                     
+                        <h2 className={"section_title"}>Newsletter</h2>                     
                     </Col>
                 </Row>
                

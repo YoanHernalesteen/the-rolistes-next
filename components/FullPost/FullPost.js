@@ -1,7 +1,6 @@
 
 import { Fragment } from 'react';
 import classes from './FullPost.module.css';
-import globalClasses from '../../styles/styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import Head from 'next/head';

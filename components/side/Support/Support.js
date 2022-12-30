@@ -5,15 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import driveThruRPGButton from '../../../assets/images/Icon_Drivethru.png';
 import { Row, Col } from 'react-bootstrap';
 import classes from './Support.module.css';
-import globalClasses from '../../../styles/styles.css';
 
 const Support = (props) => {
     return (
         <Fragment>
-            <div className={[globalClasses.item_box_right,globalClasses.item_box_hide_mobile].join(' ')}>
+            <div className={["item_box_right","item_box_hide_mobile"].join(' ')}>
                 <Row>
                     <Col xs={12}>                    
-                        <h2 className={globalClasses.section_title}>Support Us</h2>                          
+                        <h2 className={"section_title"}>Support Us</h2>                          
                     </Col>
                     <Row className={classes.side_icons}>
                             

@@ -1,4 +1,4 @@
-import { withRouter } from 'react-router-dom';
+import { withRouter } from "next/router";
 import ReactGA from 'react-ga';
 
 const RouteChangeTracker = ({ history }) => {

@@ -8,7 +8,6 @@ import Footer from '../../../components/Footer/Footer';
 import PaginationList from '../../../components/UI/PaginationList/PaginationList';
 import * as actions from '../../../store/actions/index';
 import { connect } from 'react-redux';
-import globalClasses from '../../../styles/styles.css';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Head from 'next/head';

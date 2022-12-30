@@ -17,20 +17,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classes from "./Follow.module.css";
 import podchaserButton from "../../../assets/images/Icon_Podchaser.png";
 import { Row, Col } from "react-bootstrap";
-import globalClasses from "../../../styles/styles.css";
 
 const Follow = (props) => {
   return (
     <Fragment>
-      <div
-        className={[
-          globalClasses.item_box_right,
-          globalClasses.item_box_hide_mobile,
-        ].join(" ")}
-      >
+      <div className={["item_box_right", "item_box_hide_mobile"].join(" ")}>
         <Row>
           <Col xs={12}>
-            <h2 className={globalClasses.section_title}>Stay Connected</h2>
+            <h2 className={"section_title"}>Stay Connected</h2>
           </Col>
         </Row>
 

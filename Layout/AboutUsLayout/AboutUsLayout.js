@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-// import Posts from '../../../containers/Posts/Posts';
+import Posts from '../../containers/Posts/Posts';
 import { Col, Container, Row } from 'react-bootstrap';
 import Footer from '../../components/Footer/Footer';
 import Head from 'next/head';

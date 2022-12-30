@@ -7,7 +7,6 @@ import Follow from '../../../components/side/Follow/Follow';
 import Support from '../../../components/side/Support/Support';
 import PaginationList from '../../../components/UI/PaginationList/PaginationList';
 import Footer from '../../../components/Footer/Footer';
-import globalClasses from '../../../styles/styles.css';
 import { useParams } from 'react-router-dom';
 import Subscribe from '../../../components/side/Subscribe/Subscribe';
 
@@ -25,25 +24,25 @@ const PostLayout = (props) => {
             <Container>
                 <Ads/>
                 <Row>
-                    <Col lg={8} xs={12} className={[globalClasses.no_padding_right,globalClasses.no_padding_smallscreen].join(' ')}>
+                    <Col lg={8} xs={12} className={["no_padding_right","no_padding_smallscreen"].join(' ')}>
                         <Posts type={props.type} pageTitle={pageId}/>                    
                         <PaginationList/>
                     </Col>
                     <Col  lg={4} xs={12}>
                         <Row>  
-                            <Col xs={12} className={globalClasses.no_padding_smallscreen}>
+                            <Col xs={12} className={"no_padding_smallscreen"}>
                                 <Follow /> 
                             </Col>                  
-                            <Col xs={12} className={globalClasses.no_padding_smallscreen}>
+                            <Col xs={12} className={"no_padding_smallscreen"}>
                                 <Support />
                             </Col>  
                             {/* <Col xs={12} className={globalClasses.no_padding_smallscreen}>
                                 <Subscribe />
                             </Col>    */}
-                            <Col xs={12} className={globalClasses.no_padding_smallscreen}>
+                            <Col xs={12} className={"no_padding_smallscreen"}>
                                 <Posts type="RECOMMENDED" postType={props.type} pageTitle={pageId}/>
                             </Col>  
-                            <Col xs={12} className={globalClasses.no_padding_smallscreen}>
+                            <Col xs={12} className={"no_padding_smallscreen"}>
                                 <Posts type="RECENT" postType={props.type}/>
                             </Col>                  
                         </Row>                    

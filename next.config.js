@@ -2,6 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
+  webpack: (config, options) => {
+    config.module.rules.push({
+      test: /\.xml/,
+      use: ["@xml2js"],
+    });
 
-module.exports = nextConfig
+    return config;
+  },
+};
+
+module.exports = nextConfig;

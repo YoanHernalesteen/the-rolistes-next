@@ -1,10 +1,7 @@
-
-
 import { Fragment } from 'react';
 import { Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import classes from './PodcastTile.module.css';
-import globalClasses from '../../styles/styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -13,9 +10,9 @@ const PodcastTile = (props) => {
     return (
         <Fragment>
             <Col xs={12} md={6} lg={4} className={classes.cell} >
-                {/* <Link to={props.location + '/'  + props.postName}> */}
-                {/* <Link to={'/' + year + '/' + month + '/' + day + '/' + props.postName}>   */}
-                <Link to={props.url}>
+                {/* <Link href={props.location + '/'  + props.postName}> */}
+                {/* <Link href={'/' + year + '/' + month + '/' + day + '/' + props.postName}>   */}
+                <Link href={props.url}>
                     <img src={props.cover} alt="Cover Episode"/> 
                     {/* <img src={imgTest} alt=""/>  */}
                     <div className={classes.overlay}> 

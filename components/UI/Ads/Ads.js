@@ -1,8 +1,9 @@
 
 import { Fragment } from 'react';
-import adsIMG from '../../../assets/images/Banner_DriveThruRPG_BnW.png';
 import classes from './Ads.module.css';
 import { Row, Col } from 'react-bootstrap';
+
+const adsIMG = "/images/Banner_DriveThruRPG_BnW.png";
 
 const Ads = (props) => (
     <Fragment>
