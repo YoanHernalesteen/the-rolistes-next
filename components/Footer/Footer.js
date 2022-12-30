@@ -17,8 +17,6 @@ const Footer = (props) => {
         window.onscroll = function() {toggleFooter(this)};
       },)
     
-    // window.onscroll = function() {toggleFooter(this)};
-
 	const toggleFooter = () => {
         
         const elem = document.getElementById("dynamicFooter") ;
