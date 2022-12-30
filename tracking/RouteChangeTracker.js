@@ -1,12 +1,14 @@
 import { withRouter } from "next/router";
+import { useEffect } from "react";
 import ReactGA from 'react-ga';
 
 const RouteChangeTracker = ({ history }) => {
 
-    history.listen((location, action) => {
-        ReactGA.set({ page: location.pathname });
-        ReactGA.pageview(location.pathname);
-    });
+   
+    // history.listen((location, action) => {
+    //     ReactGA.set({ page: location.pathname });
+    //     ReactGA.pageview(location.pathname);
+    // });
 
     return <div></div>;
 };
