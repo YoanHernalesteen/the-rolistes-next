@@ -88,45 +88,6 @@ const getAttachmentURL = (attachments, postMeta) => {
                       
         }
     }
-
-    // console.log(postMeta);
-    // console.log(postMeta);    
-    // console.log(attachments);
-    // console.log(postMeta["content:encoded"][0]);
-
-
-    // imgLink = postMeta["content:encoded"][0];
-
-    // if(imgLink.indexOf('</figure>')>0){
-    //     imgLink = imgLink.substring(0,imgLink.indexOf('</figure>'));
-    
-    //     startIndex = imgLink.indexOf("<a href=")+ 9;
-    //     endIndexJPG = imgLink.indexOf(".jpg") + 4;
-    //     endIndexPNG = imgLink.indexOf(".png") + 4;
-    //     // console.log (imgLink);
-        
-    //     // console.log(startIndex);
-
-    //     if (endIndexJPG > 4){
-    //         imgLink = imgLink.substring(
-    //             startIndex, 
-    //             endIndexJPG
-    //         );
-
-    //         // console.log( endIndexJPG );
-
-    //         return imgLink;
-    //     }else{
-    //         if( endIndexPNG > 4){
-    //             imgLink = imgLink.substring(
-    //                 startIndex, 
-    //                 endIndexPNG
-    //             );
-    //             // console.log( endIndexPNG );
-    //             return imgLink;
-    //         }       
-    //     }        
-    // } 
  
     return missingIMG;    
 }
