@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Row, Col } from "react-bootstrap";
 import classes from "../Footer.module.css";
+import globalClasses from '../../../styles/App.module.css';
 
 const paypalButton = "/images/Buttons_PayPal_BnW.png";
 const patreonButton = "/images/Buttons_Patreon_BnW.png";
@@ -12,8 +13,8 @@ const Support = (props) => {
     <Fragment>
       <Row>
         <Col xs={12}>
-          <div className={"item_box_footer"}>
-            <h2 className={"section_title_footer"}>Support Us</h2>
+          <div className={globalClasses.item_box_footer}>
+            <h2 className={globalClasses.section_title_footer}>Support Us</h2>
             <Row>
               <Col xs={6} md={3} lg={3}>
                 <a

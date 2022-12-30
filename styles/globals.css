@@ -333,7 +333,9 @@ a:hover > h3 {
 
 img {
   border-radius: 5px;
+  width: 100%;
 }
+
 /* 
 .img_scale_animate > img {
   transition: all 0.8s ease-out;

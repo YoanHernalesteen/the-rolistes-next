@@ -9,10 +9,8 @@ function AboutPage(props) {
 
     return (
       
-      <div>
         <AboutUsLayout/>
-        {props.events}
-      </div>
+      
     );
   }
   
