@@ -1,6 +1,6 @@
 import Layout from "../Layout/layout";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/styles.css";
+import "../styles/globals.css";
 import RouteChangeTracker from "../tracking/RouteChangeTracker";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";

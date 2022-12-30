@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import Post from '../../components/Post/Post';
 import PodcastTile from '../../components/PodcastTile/PodcastTile';
 import FullPost from '../../components/FullPost/FullPost';
@@ -13,19 +13,18 @@ import RecentPosts from '../../components/side/Recent/RecentPosts';
 import * as actions from '../../store/actions/index';
 import { connect } from 'react-redux';
 import Spinner from '../../components/UI/Spinner/Spinner';
-import { Row } from 'react-bootstrap';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import ComingSoon from '../../components/ComingSoon/ComingSoon';
-import Aux from '../../hoc/Auxiliary/Auxiliary';
-import bannerImg from '../../assets/images/rollinKunzArt/Banner.jpg';
 import Banner from '../../components/UI/Banner/Banner';
+
+const bannerImg = "/images/rollinKunzArt/Banner.jpg"
 
 const Posts = props => {
 
     let sizePodcast = 1;    
     let posts = <Spinner />;
     let key = 0;
-    let location = useLocation();  
+    // let location = useLocation();  
 
     const searchPost = ( posts, pageTitle ) => {
 
@@ -341,7 +340,7 @@ const Posts = props => {
                 const latestComingSoon = props.comingSoon[0];
 
                 posts = 
-                <Aux>
+                <Fragment>
                     <ComingSoon latestComingSoon={latestComingSoon} />
                     <Banner/>
                     <LatestPodcast 
@@ -349,7 +348,7 @@ const Posts = props => {
                     <Ads/>
                     <LatestNews 
                     news={latestNews}/> 
-                </Aux>                                                          
+                </Fragment>                                                          
                 break;
 
             case "RECENT":
@@ -381,9 +380,9 @@ const Posts = props => {
     }
 
     return (
-        <Aux>
+        <Fragment>
             {posts}
-        </Aux>
+        </Fragment>
     );
 }
 

@@ -14,15 +14,15 @@ const AboutUsLayout = (props) => (
             <Row>                                           
                 <Col xs={12} className={["no_padding_right","no_padding_smallscreen"].join(' ')} >                    
                     
-                    {/* <Posts 
+                    <Posts 
                         {...props} 
-                        type="ABOUT"/>   */}
+                        type="ABOUT"/>  
 
                 <div className={"item_box_left"} >               
                     <h1 className={["section_title", "section_title_article"].join(' ')}>The Team</h1>                 
-                    {/* <Posts 
+                    <Posts 
                         {...props} 
-                        type="THETEAM"/>   */}
+                        type="THETEAM"/>  
                 </div>
                 </Col>
             </Row>
