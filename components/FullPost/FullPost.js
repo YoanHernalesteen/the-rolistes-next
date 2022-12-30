@@ -4,7 +4,7 @@ import classes from './FullPost.module.css';
 import globalClasses from '../../styles/styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
-import { Helmet } from 'react-helmet';
+import Head from 'next/head';
 
 const FullPost = (props) => {
 
@@ -62,10 +62,10 @@ const FullPost = (props) => {
     return (
         
         <Fragment>
-            <Helmet>
+            <Head>
                 <title>{props.title}</title>
                 <meta name="description" content=""/>
-            </Helmet>
+            </Head>
             <div className={globalClasses.item_box_left} >               
                 <h1 className={[globalClasses.section_title, globalClasses.section_title_article].join(' ')}>{props.title}</h1>                    
 

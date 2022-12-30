@@ -1,29 +1,28 @@
 import { Fragment } from 'react';
-import Posts from '../../../containers/Posts/Posts';
+// import Posts from '../../../containers/Posts/Posts';
 import { Col, Container, Row } from 'react-bootstrap';
-import Footer from '../../../components/Footer/Footer';
-import globalClasses from '../../../styles/styles.css';
-import { Helmet } from 'react-helmet';
+import Footer from '../../components/Footer/Footer';
+import Head from 'next/head';
 
 const AboutUsLayout = (props) => (
     <Fragment>
-        <Helmet>
+        <Head>
             <title>The Rolistes Podcast - About Us</title>
             <meta name="description" content=""/>
-        </Helmet>
+        </Head>
         <Container>
             <Row>                                           
-                <Col xs={12} className={[globalClasses.no_padding_right,globalClasses.no_padding_smallscreen].join(' ')} >                    
+                <Col xs={12} className={["no_padding_right","no_padding_smallscreen"].join(' ')} >                    
                     
-                    <Posts 
+                    {/* <Posts 
                         {...props} 
-                        type="ABOUT"/>  
+                        type="ABOUT"/>   */}
 
-                <div className={globalClasses.item_box_left} >               
-                    <h1 className={[globalClasses.section_title, globalClasses.section_title_article].join(' ')}>The Team</h1>                 
-                    <Posts 
+                <div className={"item_box_left"} >               
+                    <h1 className={["section_title", "section_title_article"].join(' ')}>The Team</h1>                 
+                    {/* <Posts 
                         {...props} 
-                        type="THETEAM"/>  
+                        type="THETEAM"/>   */}
                 </div>
                 </Col>
             </Row>

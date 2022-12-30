@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import AboutUsLayout from '../../Layout/AboutUsLayout/AboutUsLayout';
 
 function AboutPage(props) {
 
@@ -7,7 +8,9 @@ function AboutPage(props) {
   },)
 
     return (
+      
       <div>
+        <AboutUsLayout/>
         {props.events}
       </div>
     );

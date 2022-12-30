@@ -10,8 +10,8 @@ import * as actions from '../../../store/actions/index';
 import { connect } from 'react-redux';
 import globalClasses from '../../../styles/styles.css';
 import { useState } from 'react';
-import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
+import Head from 'next/head';
 
 const PodcastLayout = (props) => {
 
@@ -166,10 +166,10 @@ const PodcastLayout = (props) => {
  
     return (
         <Fragment>
-            <Helmet>
+            <Head>
                 <title>The Rolistes Podcast - Podcasts</title>
                 <meta name="description" content=""/>
-            </Helmet>
+            </Head>
             <Container>
                 <Ads/>
                 <div className={[globalClasses.item_box, globalClasses.no_padding_smallscreen].join(' ')}>

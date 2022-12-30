@@ -10,8 +10,8 @@ import Footer from '../../../components/Footer/Footer';
 import * as actions from '../../../store/actions/index';
 import { connect } from 'react-redux';
 import globalClasses from '../../../styles/styles.css';
-import { Helmet } from 'react-helmet';
 import Subscribe from '../../../components/side/Subscribe/Subscribe';
+import Head from 'next/head';
 
 
 
@@ -29,10 +29,10 @@ const NewsLayout = (props) =>
 
     return (
         <Fragment>            
-            <Helmet>
+            <Head>
                 <title>The Rolistes Podcast - News</title>
                 <meta name="description" content=""/>
-            </Helmet>
+            </Head>
             <Container>
                 <Ads/>
                 <Row>                                         

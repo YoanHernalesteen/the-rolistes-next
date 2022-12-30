@@ -2,14 +2,14 @@ import React, { Fragment } from 'react';
 import Footer from '../../../components/Footer/Footer';
 import { Container } from 'react-bootstrap';
 import Posts from '../../../containers/Posts/Posts';
-import { Helmet } from 'react-helmet';
+import Head from 'next/head';
 
 const HomeLayout = (props) => (
     <Fragment>
-        <Helmet>
+        <Head>
             <title>The Rolistes Podcast - Home</title>
             <meta name="description" content=""/>
-        </Helmet>
+        </Head>
         <Container>  
             <Posts {...props} type="LATEST" />                
         </Container>        
