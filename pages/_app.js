@@ -1,5 +1,6 @@
 import Layout from "../Layout/layout";
-import "../styles/globals.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "../styles/styles.css";
 
 function MyApp({ Component, pageProps }) {
   return (

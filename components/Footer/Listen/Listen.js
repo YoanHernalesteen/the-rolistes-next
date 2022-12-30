@@ -1,12 +1,6 @@
 import { Fragment } from "react";
 import classes from "../Footer.module.css";
 import { Row, Col } from "react-bootstrap";
-// import appleButton from "../../../public/images/Buttons_Apple_BnW.png";
-// import spotifyButton from "../../../public/images/Buttons_Spotify_BnW.png";
-// import stitcherButton from "../../../public/images/Buttons_Stitcher_BnW.png";
-// import podchaserButton from "../../../public/images/Buttons_Podchaser_BnW.png";
-// import RSSButton from "../../../public/images/Buttons_RSS_BnW.png";
-// import globalClasses from '../../../styles/styles.css';
 
 const appleButton = "/images/Buttons_Apple_BnW.png";
 const spotifyButton = "/images/Buttons_Spotify_BnW.png";

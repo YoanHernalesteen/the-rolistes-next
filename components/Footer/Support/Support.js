@@ -1,11 +1,6 @@
 import { Fragment } from "react";
 import { Row, Col } from "react-bootstrap";
-// import paypalButton from "../../../public/images/Buttons_PayPal_BnW.png";
-// import patreonButton from "../../../public/images/Buttons_Patreon_BnW.png";
-// import DriveThruRPGButton from "../../../public/images/Buttons_DriveThruRPG_BnW.png";
-// import itchIOButton from "../../../public/images/Buttons_Itch.io_BnW.png";
 import classes from "../Footer.module.css";
-// import globalClasses from '../../../styles/styles.css';
 
 const paypalButton = "/images/Buttons_PayPal_BnW.png";
 const patreonButton = "/images/Buttons_Patreon_BnW.png";

@@ -1,4 +1,10 @@
+import { useEffect } from 'react';
+
 function HomePage(props) {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },)
 
   return (
     <div>

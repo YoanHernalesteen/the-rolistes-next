@@ -8,7 +8,7 @@ import globalClasses from '../../styles/styles.css';
 const ComingSoon = (props) => (
     <Fragment>
     
-        <div className={[globalClasses.item_box, classes.item_box_comingsoon].join(' ')}>
+        <div className={["item_box", classes.item_box_comingsoon].join(' ')}>
             <Row>
                 <Col xs={12}>
                     <h2>Coming Soon - {props.latestComingSoon["title"]}</h2>
