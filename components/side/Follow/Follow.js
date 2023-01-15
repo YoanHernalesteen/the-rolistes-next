@@ -6,6 +6,7 @@ import {
   faTiktok,
   faTwitter,
   faYoutube,
+  faMastodon,
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faPodcast,
@@ -128,6 +129,16 @@ const Follow = (props) => {
           <Row className={classes.side_icons}>
             <Col xs={3}>
               <a
+                href="https://www.facebook.com/Rolistespod/"
+                className={classes.SideLink}
+              >
+                <span>
+                  <FontAwesomeIcon icon={faFacebookF} aria-hidden="true" />
+                </span>
+              </a>
+            </Col>
+            <Col xs={3}>
+              <a
                 href="https://twitter.com/rolistespod"
                 className={classes.SideLink}
               >
@@ -139,11 +150,11 @@ const Follow = (props) => {
 
             <Col xs={3}>
               <a
-                href="https://www.facebook.com/Rolistespod/"
+                href="https://dice.camp/@Rolistespod"
                 className={classes.SideLink}
               >
                 <span>
-                  <FontAwesomeIcon icon={faFacebookF} aria-hidden="true" />
+                  <FontAwesomeIcon icon={faMastodon} aria-hidden="true" />
                 </span>
               </a>
             </Col>

@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF, faMastodon, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classes from "../Footer.module.css";
 import { Row, Col } from "react-bootstrap";
@@ -33,6 +33,17 @@ const Follow = (props) => {
             >
               <span>
                 <FontAwesomeIcon icon={faTwitter} aria-hidden="true" />
+              </span>
+            </a>
+          </Col>
+
+          <Col xs={4}>
+            <a
+              href="https://dice.camp/@Rolistespod"
+              className={classes.FooterLink}
+            >
+              <span>
+                <FontAwesomeIcon icon={faMastodon} aria-hidden="true" />
               </span>
             </a>
           </Col>
