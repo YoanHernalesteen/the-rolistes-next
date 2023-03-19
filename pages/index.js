@@ -13,13 +13,13 @@ function HomePage(props) {
   );
 }
 
-export async function getStaticProps() {
-  return {
-    props: {
-      events: "featuredEvents",
-    },
-    revalidate: 1800
-  };
-}
+// export async function getStaticProps() {
+//   return {
+//     props: {
+//       events: "featuredEvents",
+//     },
+//     revalidate: 1800
+//   };
+// }
 
 export default HomePage;

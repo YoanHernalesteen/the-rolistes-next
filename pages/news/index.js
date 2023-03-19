@@ -14,14 +14,14 @@ function NewsListPage(props) {
     );
   }
   
-  export async function getStaticProps() {
-    return {
-      props: {
-        events: "news list",
-      },
-      revalidate: 1800
-    };
-  }
+  // export async function getStaticProps() {
+  //   return {
+  //     props: {
+  //       events: "news list",
+  //     },
+  //     revalidate: 1800
+  //   };
+  // }
   
   export default NewsListPage;
   
