@@ -10,7 +10,7 @@ import globalClasses from '../../styles/App.module.css';
 const FullPost = (props) => {
 
     const createYoutubeEmbed = (key) => {
-        return '<iframe  src="https://www.youtube.com/embed/' + key + '" frameborder="0" allowfullscreen></iframe><br/>';
+        return '<iframe  src="https://www.youtube.com/embed/' + key + '" frameBorder="0" allowfullscreen></iframe><br/>';
        
     };
       

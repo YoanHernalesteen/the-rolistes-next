@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const drawerToggle = (props) => (       
         <div className={classes.DrawerToggle} >
-            <Link  href="/" exact>
+            <Link  href="/" exact="true">
                 <Logo/>
             </Link>
             <span onClick={props.clicked}>

@@ -8,7 +8,7 @@ const patreonButton = "/images/become_a_patron_button_BnW - Black.png";
 
 const navigationItems = (props) => (
   <ul className={classes.NavigationItems}>
-    <Link href="/" exact>
+    <Link href="/" exact="true">
       <Logo />
     </Link>
 
