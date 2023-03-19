@@ -2,9 +2,10 @@
 import { Fragment } from 'react';
 import { faPatreon, faPaypal, faItchIo } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import driveThruRPGButton from '../../../assets/images/Icon_Drivethru.png';
 import { Row, Col } from 'react-bootstrap';
 import classes from './Support.module.css';
+
+const DriveThruRPGButton = "/images/Icon_Drivethru.png";
 
 const Support = (props) => {
     return (
@@ -25,7 +26,7 @@ const Support = (props) => {
                         </Col>
 
                         <Col xs={3}>
-                            <a href="https://www.drivethrurpg.com/index.php?affiliate_id=1289000" className={classes.sideLinkIcon}><img src={driveThruRPGButton}  alt="Donate with Paypal" aria-hidden="true"/></a>
+                            <a href="https://www.drivethrurpg.com/index.php?affiliate_id=1289000" className={classes.sideLinkIcon}><img src={DriveThruRPGButton}  alt="Donate with Paypal" aria-hidden="true"/></a>
                         </Col>
 
                         <Col xs={3}>

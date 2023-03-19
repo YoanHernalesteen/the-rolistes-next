@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import Head from 'next/head';
 
+import globalClasses from '../../styles/App.module.css';
+
 const FullPost = (props) => {
 
     const createYoutubeEmbed = (key) => {

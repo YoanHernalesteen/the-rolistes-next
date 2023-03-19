@@ -4,6 +4,8 @@ import classes from './Post.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
+import globalClasses from '../../styles/App.module.css';
+
 const Post = (props) => {    
 
     return (

@@ -16,8 +16,9 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import classes from "./Follow.module.css";
-import podchaserButton from "../../../assets/images/Icon_Podchaser.png";
 import { Row, Col } from "react-bootstrap";
+
+const PodchaserButton = "/images/Icon_Podchaser.png";
 
 const Follow = (props) => {
   return (
@@ -62,7 +63,7 @@ const Follow = (props) => {
                 className={classes.sideLinkIcon}
               >
                 <img
-                  src={podchaserButton}
+                  src={PodchaserButton}
                   alt="Donate with Paypal"
                   aria-hidden="true"
                 />

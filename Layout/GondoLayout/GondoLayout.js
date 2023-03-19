@@ -1,16 +1,17 @@
 import React, { Fragment, useEffect } from 'react';
-import Posts from '../../../containers/Posts/Posts';
+import Posts from '../../containers/Posts/Posts';
 import classes from './GondoLayout.module.css';
-import PaginationList from '../../../components/UI/PaginationList/PaginationList';
+import PaginationList from '../../components/UI/PaginationList/PaginationList';
 import { Col, Container, Row } from 'react-bootstrap';
-import Follow from '../../../components/side/Follow/Follow';
-import Ads from '../../../components/UI/Ads/Ads';
-import Support from '../../../components/side/Support/Support';
-import Footer from '../../../components/Footer/Footer';
-import * as actions from '../../../store/actions/index';
+import Follow from '../../components/side/Follow/Follow';
+import Ads from '../../components/UI/Ads/Ads';
+import Support from '../../components/side/Support/Support';
+import Footer from '../../components/Footer/Footer';
+import * as actions from '../../store/actions/index';
 import { connect } from 'react-redux';
-import Subscribe from '../../../components/side/Subscribe/Subscribe';
+import Subscribe from '../../components/side/Subscribe/Subscribe';
 import Head from 'next/head';
+import globalClasses from '../../styles/App.module.css';
 
 
 const NewsLayout = (props) => 
