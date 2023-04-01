@@ -39,9 +39,10 @@ const NewsLayout = (props) =>
                         <Posts 
                             {...props} 
                             type="INTROGONDO"/>
-                        <div className={classes.item_box_left_gondo}>
+                        {/* crash comes from here */}
+                        {/* <div className={classes.item_box_left_gondo}>
                             <iframe className={classes.gondo_ads} frameBorder="0" src="https://itch.io/embed/1185131?border_width=0&amp;border_color=ffffff" width="206" height="165"><a href="https://rolistespod.itch.io/paris-gondo%22%3EParis Gondo - The Life-Saving Magic of Inventorying by Kalum from The Rolistes Podcast"></a></iframe>                       
-                        </div>                          
+                        </div>                           */}
                         
                         <div className={"item_box_left"}>
                             <h2 className={"section_title"}>Latest Paris Gondo News</h2>
