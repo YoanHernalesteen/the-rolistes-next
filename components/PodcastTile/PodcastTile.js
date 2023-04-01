@@ -5,6 +5,8 @@ import classes from './PodcastTile.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
+import globalClasses from '../../styles/App.module.css';
+
 const PodcastTile = (props) => { 
 
     return (

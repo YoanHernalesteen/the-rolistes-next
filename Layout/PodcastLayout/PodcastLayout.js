@@ -9,15 +9,18 @@ import PaginationList from '../../components/UI/PaginationList/PaginationList';
 import * as actions from '../../store/actions/index';
 import { connect } from 'react-redux';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import Head from 'next/head';
+
+import globalClasses from '../../styles/App.module.css';
 
 const PodcastLayout = (props) => {
 
     // let { categoryId } = useParams();
-    const search = props.location.search;
-    const params = new URLSearchParams(search);
-    const categoryId = params.get("cat");
+    // const search = props.location.search;
+    // const params = new URLSearchParams(search);
+    // const categoryId = params.get("cat");
+    const categoryId = "";
 
     const postPerPage = 24;
     const indexOfLastPost = props.currentPagePodcast * postPerPage;
