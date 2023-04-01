@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import NewsLayout from "../../Layout/NewsLayout/NewsLayout";
 
 function NewsListPage(props) {
 
@@ -6,12 +7,8 @@ function NewsListPage(props) {
     window.scrollTo(0, 0);
   },)
 
+  return <NewsLayout />;
 
-    return (
-      <div>
-        {props.events}
-      </div>
-    );
   }
   
   // export async function getStaticProps() {

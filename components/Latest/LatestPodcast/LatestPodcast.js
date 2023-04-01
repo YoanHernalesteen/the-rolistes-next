@@ -2,9 +2,10 @@
 import { Fragment } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Link from 'next/link';
-import classes from './LatestPodcast.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+
+import globalClasses from '../../../styles/App.module.css';
 
 const LatestPodcast = (props) => {
 

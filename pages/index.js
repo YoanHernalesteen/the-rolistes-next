@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import HomeLayout from "../Layout/HomeLayout/HomeLayout";
 
 function HomePage(props) {
 
@@ -6,11 +7,8 @@ function HomePage(props) {
     window.scrollTo(0, 0);
   },)
 
-  return (
-    <div>
-      {props.events}
-    </div>
-  );
+  
+  return <HomeLayout />;
 }
 
 // export async function getStaticProps() {

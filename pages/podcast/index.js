@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import PodcastLayout from "../../Layout/PodcastLayout/PodcastLayout";
 
 function PodcastListPage(props) {
 
@@ -6,11 +7,7 @@ function PodcastListPage(props) {
     window.scrollTo(0, 0);
   },)
 
-    return (
-      <div>
-        {props.events}
-      </div>
-    );
+  return <PodcastLayout />;
   }
   
   // export async function getStaticProps() {

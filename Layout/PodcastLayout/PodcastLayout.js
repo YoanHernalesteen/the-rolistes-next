@@ -1,12 +1,12 @@
 import React, { Fragment, useEffect } from 'react';
-import Button from '../../../components/UI/Button/Button';
+import Button from '../../components/UI/Button/Button';
 import classes from './PodcastLayout.module.css';
 import { Col, Container, Row } from 'react-bootstrap';
-import Posts from '../../../containers/Posts/Posts';
-import Ads from '../../../components/UI/Ads/Ads';
-import Footer from '../../../components/Footer/Footer';
-import PaginationList from '../../../components/UI/PaginationList/PaginationList';
-import * as actions from '../../../store/actions/index';
+import Posts from '../../containers/Posts/Posts';
+import Ads from '../../components/UI/Ads/Ads';
+import Footer from '../../components/Footer/Footer';
+import PaginationList from '../../components/UI/PaginationList/PaginationList';
+import * as actions from '../../store/actions/index';
 import { connect } from 'react-redux';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';

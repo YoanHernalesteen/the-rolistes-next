@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import Footer from '../../../components/Footer/Footer';
+import Footer from '../../components/Footer/Footer';
 import { Container } from 'react-bootstrap';
-import Posts from '../../../containers/Posts/Posts';
+import Posts from '../../containers/Posts/Posts';
 import Head from 'next/head';
 
 const HomeLayout = (props) => (
