@@ -9,6 +9,7 @@
 .cell {
     /* padding: 15px var(--padding-cell) 0;*/
     padding: 15px 17px 0; 
+    position: relative;
 } 
 
 .overlay {
