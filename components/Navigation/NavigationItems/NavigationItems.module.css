@@ -83,3 +83,10 @@
         margin-left: 14.75rem;
     }
 }
+
+@media screen and (min-width: 1400px){
+
+    .supportLink img{
+        margin-left: 26.15rem;
+    }
+}
