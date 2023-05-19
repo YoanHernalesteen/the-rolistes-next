@@ -56,5 +56,5 @@ const PostLayout = (props) => {
     )
 
 }
-    
+
 export default PostLayout;
