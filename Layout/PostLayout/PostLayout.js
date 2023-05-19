@@ -1,18 +1,18 @@
 import { Fragment, useEffect } from 'react';
-import Posts from '../../../containers/Posts/Posts';
+import Posts from '../../containers/Posts/Posts';
 import classes from './PostLayout.module.css';
 import { Col, Container, Row } from 'react-bootstrap';
-import Ads from '../../../components/UI/Ads/Ads';
-import Follow from '../../../components/side/Follow/Follow';
-import Support from '../../../components/side/Support/Support';
-import PaginationList from '../../../components/UI/PaginationList/PaginationList';
-import Footer from '../../../components/Footer/Footer';
-import { useParams } from 'react-router-dom';
-import Subscribe from '../../../components/side/Subscribe/Subscribe';
+import Ads from '../../components/UI/Ads/Ads';
+import Follow from '../../components/side/Follow/Follow';
+import Support from '../../components/side/Support/Support';
+import PaginationList from '../../components/UI/PaginationList/PaginationList';
+import Footer from '../../components/Footer/Footer';
+// import { useParams } from 'react-router-dom';
+import Subscribe from '../../components/side/Subscribe/Subscribe';
 
 const PostLayout = (props) => {
 
-    let {pageId} = useParams();
+    const pageId = props.postId;
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -25,7 +25,7 @@ const PostLayout = (props) => {
                 <Ads/>
                 <Row>
                     <Col lg={8} xs={12} className={["no_padding_right","no_padding_smallscreen"].join(' ')}>
-                        <Posts type={props.type} pageTitle={pageId}/>                    
+                        <Posts {...props} type={props.type} pageTitle={pageId}/>                    
                         <PaginationList/>
                     </Col>
                     <Col  lg={4} xs={12}>
