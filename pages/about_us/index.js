@@ -9,13 +9,13 @@ function AboutPage(props) {
   return <AboutUsLayout />;
 }
 
-// export async function getStaticProps() {
-//   return {
-//     props: {
-//       events: "about",
-//     },
-//     revalidate: 1800,
-//   };
-// }
+export async function getStaticProps() {
+  return {
+    props: {
+      events: "about",
+    },
+    revalidate: 1800,
+  };
+}
 
 export default AboutPage;
