@@ -26,4 +26,36 @@ function PodcastPage(props) {
   return <PostLayout {...props} type="FULLPOST" postId={podcastId} />;
 }
 
+export async function getStaticProps() {
+  return {
+    props: {
+      podcastId:
+      {
+        podcastYear: "2020",
+        podcastMonth: "12",
+        podcastDay: "28",
+        podcastId:
+          "the-rolistes-present-metatopia-ttrpgs-english-as-our-vehicular-language-beyond-the-american-culture-online",
+      },
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      {
+        params: {
+          podcastId: ["2020",
+             "12",
+             "28",            
+              "the-rolistes-present-metatopia-ttrpgs-english-as-our-vehicular-language-beyond-the-american-culture-online"
+        ],
+        },
+      },
+    ],
+    fallback: "blocking",
+  };
+}
+
 export default PodcastPage;
