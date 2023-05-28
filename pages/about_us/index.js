@@ -1,15 +1,16 @@
 import { useEffect } from "react";
 import AboutUsLayout from "../../Layout/AboutUsLayout/AboutUsLayout";
 
-
-import {searchPost, searchLatest, searchPostsBasedOnCategory, searchRecommendedPosts, searchLatestPodcast,fetchPostsHelper} from "../../helpers/api-util.js";
+import {
+  fetchPostsHelper,
+} from "../../helpers/api-util.js";
 
 function AboutPage(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
   });
 
-  return <AboutUsLayout {...props}/>;
+  return <AboutUsLayout {...props} />;
 }
 
 export async function getStaticProps() {
@@ -24,11 +25,9 @@ export async function getStaticProps() {
   return {
     props: {
       about: fetchedPosts.about,
-      theTeam: fetchedPosts.theTeam
+      theTeam: fetchedPosts.theTeam,
     },
   };
 }
-
-
 
 export default AboutPage;

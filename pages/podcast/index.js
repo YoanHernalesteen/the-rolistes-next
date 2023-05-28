@@ -2,11 +2,6 @@ import { useEffect } from "react";
 import PodcastLayout from "../../Layout/PodcastLayout/PodcastLayout";
 
 import {
-  searchPost,
-  searchLatest,
-  searchPostsBasedOnCategory,
-  searchRecommendedPosts,
-  searchLatestPodcast,
   fetchPostsHelper,
 } from "../../helpers/api-util.js";
 
@@ -15,7 +10,7 @@ function PodcastListPage(props) {
     window.scrollTo(0, 0);
   });
 
-  return <PodcastLayout />;
+  return <PodcastLayout  {...props}/>;
 }
 
 export async function getStaticProps() {

@@ -1,14 +1,18 @@
 import { useEffect } from "react";
 import GondoLayout from "../../Layout/GondoLayout/GondoLayout";
 
-import {searchPost, searchLatest, searchPostsBasedOnCategory, searchRecommendedPosts, searchLatestPodcast,fetchPostsHelper} from "../../helpers/api-util.js";
+import {
+  searchLatest,
+  searchLatestPodcast,
+  fetchPostsHelper,
+} from "../../helpers/api-util.js";
 
 function GondoPage(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
   });
 
-  return <GondoLayout {...props}/>;
+  return <GondoLayout {...props} />;
 }
 
 export async function getStaticProps() {
@@ -27,7 +31,7 @@ export async function getStaticProps() {
       introGondo: fetchedPosts.introGondo,
       gondo: fetchedPosts.gondo,
       latestNews: latestNews,
-      latestPodcast: latestPodcast
+      latestPodcast: latestPodcast,
     },
   };
 }

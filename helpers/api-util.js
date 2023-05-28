@@ -302,7 +302,7 @@ const searchPostBasedOnCategory = (posts, category) => {
   }
 };
 
-export const searchPostsBasedOnCategory = (posts, category) => {
+export async function searchPostsBasedOnCategory (posts, category) {
   const postsFromCategory = [];
 
   for (let i = 0; i < posts.length; i++) {

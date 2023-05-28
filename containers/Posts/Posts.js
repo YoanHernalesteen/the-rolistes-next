@@ -28,7 +28,6 @@ const Posts = (props) => {
     }
   }, [props.podcast, props.currentCategoryPodcast]);
 
-  //   if (!props.loading & props.loaded) {
   switch (props.type) {
     case "NEWS":
       const currentNews = props.news.slice(
@@ -71,11 +70,11 @@ const Posts = (props) => {
       ));
       break;
 
-    case "PODCAST":
+    case "PODCAST":    
       const currentPodcast = searchPostsBasedOnCategory(
         props.podcast,
         props.filterCategory
-      ).slice(props.indexOfFirstPost, props.indexOfLastPost);
+      ).slice(props.indexOfFirstPost, props.indexOfLastPost);      
 
       sizePodcast = currentPodcast.length;
       posts = currentPodcast.map((podcast) => (
@@ -209,7 +208,6 @@ const Posts = (props) => {
         />
       );
       break;
-    // }
   }
 
   return <Fragment>{posts}</Fragment>;
