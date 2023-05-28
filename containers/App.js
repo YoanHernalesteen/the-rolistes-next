@@ -12,21 +12,22 @@ import thunk from "redux-thunk";
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 function App(props) {
-  const { onFetchPosts, onSetShowPopup } = props;
+  // const { onFetchPosts, onSetShowPopup } = props;
+  const { onSetShowPopup } = props;
 
   const showPopup = props.showPopup;
   // const showPopup = true;
 
-  useEffect(() => {
-    onFetchPosts();
-  }, []);
+  // useEffect(() => {
+  //   onFetchPosts();
+  // }, []);
 
   return <Fragment>{props.children}</Fragment>;
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onFetchPosts: () => dispatch(actions.fetchPosts()),
+    // onFetchPosts: () => dispatch(actions.fetchPosts()),
     onSetShowPopup: (showPopup) => dispatch(actions.setShowPopup(showPopup)),
   };
 };

@@ -9,10 +9,10 @@ import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
 const RecentPosts = (props) => {
     
-    let recentPosts = <Spinner/>
+    // let recentPosts = <Spinner/>
     const relatedPosts = props.recentPosts;
 
-    recentPosts = relatedPosts.map (post => {
+    const recentPosts = relatedPosts.map (post => {
         return <Col xs={12} className={classes.cell} key={post["id"]}>
             <div className={classes.post_recent}>
                 <aside className={[classes.aside, classes.aside_1].join(' ')}>

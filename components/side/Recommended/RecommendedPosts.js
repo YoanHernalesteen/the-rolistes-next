@@ -7,10 +7,10 @@ import classes from './RecommendedPosts.module.css';
 
 const RecommendedPosts = (props) => {
     
-    let recommendedPosts = <Spinner/>
+    // let recommendedPosts = <Spinner/>
     const relatedPosts = props.recommendedPosts;
 
-    recommendedPosts = relatedPosts.map (post => {
+    const recommendedPosts = relatedPosts.map (post => {
         return <Col xs={6} md={6} lg={6} className={classes.cell} key={post["id"]}>
             <Link href={post.url}>
                 <div className={"img_color_animate"}>  

@@ -1,5 +1,4 @@
 export {
-    fetchPosts,
     setCurrentPageNews,
     setCurrentPagePodcast,
     setCurrentCategoryPodcast,
