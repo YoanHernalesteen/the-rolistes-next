@@ -133,36 +133,17 @@ const Posts = (props) => {
       ));
       break;
 
-    case "FULLPOST":
-      key = searchPost(props.podcast, props.pageTitle);
-      if (key >= 0) {
-        const podcast = props.podcast;
-        posts = (
-          <FullPost
-            key={podcast[key].id}
-            cover={podcast[key].cover}
-            author={podcast[key]["dc:creator"][0]}
-            date={podcast[key]["pubDate"][0]}
-            title={podcast[key]["title"]}
-            content={podcast[key]["content:encoded"][0]}
-            type="PODCAST"
-          />
-        );
-      } else {
-        key = searchPost(props.news, props.pageTitle);
-        const news = props.news;
-        posts = (
-          <FullPost
-            key={news[key].id}
-            cover={news[key].cover}
-            author={news[key]["dc:creator"][0]}
-            title={news[key]["title"]}
-            content={news[key]["content:encoded"][0]}
-            date={news[key]["pubDate"][0]}
-            type="NEWS"
-          />
-        );
-      }
+    case "FULLPOST":      
+      posts = (
+        <FullPost
+          key={props.fullPost.id}
+          cover={props.fullPost.cover}
+          author={props.fullPost["dc:creator"][0]}
+          title={props.fullPost["title"]}
+          content={props.fullPost["content:encoded"][0]}
+          date={props.fullPost["pubDate"][0]}
+          type={props.fullPostType}
+        />);
       break;
 
     case "LATEST":

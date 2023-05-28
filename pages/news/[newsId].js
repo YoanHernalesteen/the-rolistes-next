@@ -3,7 +3,14 @@ import PostLayout from "../../Layout/PostLayout/PostLayout";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import { useRouter } from "next/router";
 
-import {searchPost, searchLatest, searchPostsBasedOnCategory, searchRecommendedPosts, searchLatestPodcast,fetchPostsHelper} from "../../helpers/api-util.js";
+import {
+  searchPost,
+  searchLatest,
+  searchPostsBasedOnCategory,
+  searchRecommendedPosts,
+  searchLatestPodcast,
+  fetchPostsHelper,
+} from "../../helpers/api-util.js";
 
 function NewsPage(props) {
   useEffect(() => {
@@ -16,7 +23,7 @@ function NewsPage(props) {
 
   const newsId = router.query.newsId;
 
-  <PostLayout {...props} type="FULLPOST" postId={newsId} />
+  <PostLayout {...props} type="FULLPOST" />;
 
   // return newsId ? (
   //   <PostLayout {...props} type="FULLPOST" postId={newsId} />
@@ -25,45 +32,61 @@ function NewsPage(props) {
   // );
 }
 
-// export async function getStaticProps() {
-//   return {
-//     props: {
-//       newsId:
-//         "ow-paris-gondo-the-life-saving-magic-of-inventorying-is-fully-illustrated",
-//     },
-//   };
-// }
+export async function getStaticProps(context) {
+  const pageTitle = context.params.newsId;
+  const fs = require("fs");
+  const path = require("path");
+  const dataToProcess = fs.readFileSync(
+    path.join(process.cwd(), "therolistespodcast.xml")
+  );
 
-// export async function getStaticProps() {
+  const fetchedPosts = await fetchPostsHelper(dataToProcess);
 
-//   const fetchedPosts = await fetchPostsHelper();
+  let key = 0;
+  let fullPost =[];
+  let fullPostType ="";
 
-//   return {
-//     props: {
-//       posts: fetchedPosts.posts,
-//       news: fetchedPosts.news,
-//       podcast: fetchedPosts.podcast,
-//       gondo: fetchedPosts.gondo,
-//       introGondo: fetchedPosts.introGondo,
-//       about: fetchedPosts.about,
-//       theTeam: fetchedPosts.theTeam,
-//       comingSoon: fetchedPosts.comingSoon
-//     },
-//   };
-// }
+  key = searchPost(fetchedPosts.podcast, pageTitle);
 
-// export async function getStaticPaths() {
-//   return {
-//     paths: [
-//       {
-//         params: {
-//           newsId:
-//             "now-paris-gondo-the-life-saving-magic-of-inventorying-is-fully-illustrated",
-//         },
-//       },
-//     ],
-//     fallback: "blocking",
-//   };
-// }
+  if (key >= 0) {
+    fullPost = fetchedPosts.podcast[key]; 
+    fullPostType   = "PODCAST";
+  } else {
+    key = searchPost(fetchedPosts.news, pageTitle);
+    fullPost = fetchedPosts.news[key];
+    fullPostType   = "NEWS";
+  }
+
+  console.log(fullPost);
+
+  return {
+    props: {
+      fullPost: fullPost,
+      fullPostType : fullPostType,
+      newsId: newsId,
+      news: fetchedPosts.news,
+      gondo: fetchedPosts.gondo,
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  const pageTitle = context.params.newsId;
+  const fs = require("fs");
+  const path = require("path");
+  const dataToProcess = fs.readFileSync(
+    path.join(process.cwd(), "therolistespodcast.xml")
+  );
+  const fetchedPosts = await fetchPostsHelper(dataToProcess);
+
+  const paths = fetchedPosts.map((fetchedPost) => ({
+    params: { fetchedPostId: fetchedPost.postId },
+  }));
+
+  return {
+    paths: paths,
+    fallback: "blocking",
+  };
+}
 
 export default NewsPage;
