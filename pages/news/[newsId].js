@@ -3,7 +3,7 @@ import PostLayout from "../../Layout/PostLayout/PostLayout";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import { useRouter } from "next/router";
 
-import {fetchPostsHelper} from "../../helpers/api-util.js";
+import {searchPost, searchLatest, searchPostsBasedOnCategory, searchRecommendedPosts, searchLatestPodcast,fetchPostsHelper} from "../../helpers/api-util.js";
 
 function NewsPage(props) {
   useEffect(() => {

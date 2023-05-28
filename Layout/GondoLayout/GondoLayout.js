@@ -83,8 +83,6 @@ const NewsLayout = (props) =>
 
 const mapStateToProps = state => {
     return {
-        news: state.posts.news,
-        gondo: state.posts.gondo,
         currentPageNews: state.posts.currentPageNews
     };
 };

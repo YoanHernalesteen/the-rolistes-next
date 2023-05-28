@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import NewsLayout from "../../Layout/NewsLayout/NewsLayout";
 
-import {fetchPostsHelper} from "../../helpers/api-util.js";
+import {searchPost, searchLatest, searchPostsBasedOnCategory, searchRecommendedPosts, searchLatestPodcast,fetchPostsHelper} from "../../helpers/api-util.js";
 
 function NewsListPage(props) {
 
@@ -14,25 +14,17 @@ function NewsListPage(props) {
   }
 
   export async function getStaticProps() {
-
     const fs = require("fs");
     const path = require("path");
     const dataToProcess = fs.readFileSync(
       path.join(process.cwd(), "therolistespodcast.xml")
     );
+  
     const fetchedPosts = await fetchPostsHelper(dataToProcess);
-
   
     return {
       props: {
-        posts: fetchedPosts.posts,
-        news: fetchedPosts.news,
-        podcast: fetchedPosts.podcast,
-        gondo: fetchedPosts.gondo,
-        introGondo: fetchedPosts.introGondo,
-        about: fetchedPosts.about,
-        theTeam: fetchedPosts.theTeam,
-        comingSoon: fetchedPosts.comingSoon
+        news: fetchedPosts.news
       },
     };
   }

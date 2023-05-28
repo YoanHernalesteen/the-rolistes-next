@@ -3,43 +3,12 @@ import { updateObject } from '../../shared/utility';
 
 
 const initialState = {
-    posts:[],
-    news:[],
-    podcast:[],
-    gondo:[],
-    introGondo:[],
-    comingSoon:[],
-    about: [],
-    theTeam: [],
     loading: false,
     loaded: false,
     currentPageNews: 1,
     currentPagePodcast: 1,
     currentCategoryPodcast: "podcast",
     currentCategorySize: 1
-};
-
-const fetchPostsStart = (state, action) => {
-    return updateObject(state, {loading: true}) 
-};
-
-const fetchPostsSuccess = (state, action) => {
-    return updateObject(state,{
-        posts: action.posts,
-        news: action.news,
-        podcast: action.podcast,
-        gondo: action.gondo,
-        introGondo: action.introGondo,        
-        comingSoon: action.comingSoon,
-        about: action.about,
-        theTeam: action.theTeam,
-        loading: false,
-        loaded: true
-    });
-};
-
-const fetchPostsFailed = (state, action) => {
-    return updateObject(state, {loading: false})  
 };
 
 const setCurrentPageNews = (state, action) => {

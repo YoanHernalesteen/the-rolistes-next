@@ -1,6 +1,5 @@
 const missingIMG = "/images/Logo_Nav_Missing.jpg";
 
-
 const getAttachmentURL = (attachments, postMeta) => {
   let attachmentId = 0;
 
@@ -112,7 +111,7 @@ export async function fetchPostsHelper(dataToProcess) {
   const fetchedComingSoon = [];
 
   const parseString = require("xml2js").parseString;
-  const data = dataToProcess
+  const data = dataToProcess;
 
   parseString(data, (err, result) => {
     for (let key in result["rss"]["channel"][0]["item"]) {
@@ -272,7 +271,6 @@ export async function fetchPostsHelper(dataToProcess) {
   };
 }
 
-
 export const searchPost = (posts, pageTitle) => {
   for (let i = 0; i < posts.length; i++) {
     if (posts[i]["wp:post_name"][0] === pageTitle) {
@@ -281,15 +279,14 @@ export const searchPost = (posts, pageTitle) => {
   }
 };
 
-export const searchLatest = (posts, amountToReturn) => {
+export async function searchLatest (posts, amountToReturn)  {
   const news = [];
-
   for (let i = 0; i < amountToReturn; i++) {
-    news.push({
-      ...posts[i],
-      latest: i == 0 ? true : false,
-      id: i,
-    });
+      news.push({
+        ...posts[i],
+        latest: i == 0 ? true : false,
+        id: i,
+      });
   }
 
   return news;
@@ -400,7 +397,7 @@ export const searchRecommendedPosts = (postToRead, posts) => {
   return RecommendedPodcast;
 };
 
-export const searchLatestPodcast = (posts, amountToReturn) => {
+export async function searchLatestPodcast (posts, amountToReturn) {
   const podcast = [];
 
   podcast.push({
@@ -430,4 +427,3 @@ export const searchLatestPodcast = (posts, amountToReturn) => {
 
   return podcast;
 };
-

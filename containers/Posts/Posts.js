@@ -17,169 +17,10 @@ import Banner from "../../components/UI/Banner/Banner";
 import { searchPost, searchLatest, searchPostsBasedOnCategory, searchRecommendedPosts, searchLatestPodcast } from "../../helpers/api-util.js";
 
 const Posts = (props) => {
-  // console.log(props.news);
 
   let sizePodcast = 1;
   let posts;
   let key = 0;
-
-  //   const searchPost = (posts, pageTitle) => {
-  //     for (let i = 0; i < posts.length; i++) {
-  //       if (posts[i]["wp:post_name"][0] === pageTitle) {
-  //         return i;
-  //       }
-  //     }
-  //   };
-
-  //   const searchLatest = (posts, amountToReturn) => {
-  //     const news = [];
-
-  //     for (let i = 0; i < amountToReturn; i++) {
-  //       news.push({
-  //         ...posts[i],
-  //         latest: i == 0 ? true : false,
-  //         id: i,
-  //       });
-  //     }
-
-  //     return news;
-  //   };
-
-  //   const searchPostBasedOnCategory = (posts, category) => {
-  //     for (let i = 1; i < posts.length; i++) {
-  //       for (let j = 0; j < posts[i]["category"].length; j++) {
-  //         if (posts[i]["category"][j]["$"]["nicename"] === category) {
-  //           return i;
-  //         }
-  //       }
-  //     }
-  //   };
-
-  //   const searchPostsBasedOnCategory = (posts, category) => {
-  //     const postsFromCategory = [];
-
-  //     for (let i = 0; i < posts.length; i++) {
-  //       for (let j = 0; j < posts[i]["category"].length; j++) {
-  //         if (posts[i]["category"][j]["$"]["nicename"] === category) {
-  //           postsFromCategory.push(posts[i]);
-  //         }
-  //       }
-  //     }
-
-  //     sizePodcast = postsFromCategory.length;
-  //     return postsFromCategory;
-  //   };
-
-  //   const getValueCategory = (relatedCategory) => {
-  //     let valueCategory = 1;
-
-  //     for (let i = 0; i < props.catValue0.length; i++) {
-  //       if (props.catValue0[i] === relatedCategory) {
-  //         valueCategory = 0;
-  //         return valueCategory;
-  //       }
-  //     }
-
-  //     for (let i = 0; i < props.catValue2.length; i++) {
-  //       if (props.catValue2[i] === relatedCategory) {
-  //         valueCategory = 2;
-  //         return valueCategory;
-  //       }
-  //     }
-
-  //     for (let i = 0; i < props.catValue3.length; i++) {
-  //       if (props.catValue3[i] === relatedCategory) {
-  //         valueCategory = 3;
-  //         return valueCategory;
-  //       }
-  //     }
-
-  //     for (let i = 0; i < props.catValue4.length; i++) {
-  //       if (props.catValue4[i] === relatedCategory) {
-  //         valueCategory = 4;
-  //         return valueCategory;
-  //       }
-  //     }
-
-  //     for (let i = 0; i < props.catValue5.length; i++) {
-  //       if (props.catValue5[i] === relatedCategory) {
-  //         valueCategory = 5;
-  //         return valueCategory;
-  //       }
-  //     }
-
-  //     return valueCategory;
-  //   };
-
-  //   const searchRecommendedPosts = (postToRead, posts) => {
-  //     const RecommendedPodcast = [];
-
-  //     for (let i = 0; i < posts.length; i++) {
-  //       let amountMatchCategories = 0;
-
-  //       if (posts[i] !== postToRead) {
-  //         for (let j = 0; j < postToRead["category"].length; j++) {
-  //           for (let k = 0; k < posts[i]["category"].length; k++) {
-  //             if (
-  //               postToRead["category"][j]["$"]["nicename"] ===
-  //               posts[i]["category"][k]["$"]["nicename"]
-  //             ) {
-  //               const valueCategory = getValueCategory(
-  //                 posts[i]["category"][k]["$"]["nicename"]
-  //               );
-  //               amountMatchCategories += valueCategory;
-  //             }
-  //           }
-  //         }
-
-  //         RecommendedPodcast.push({
-  //           ...posts[i],
-  //           amountMatchCategories: amountMatchCategories,
-  //           id: i,
-  //         });
-  //       }
-  //     }
-
-  //     RecommendedPodcast.sort((a, b) => {
-  //       return (
-  //         b.amountMatchCategories - a.amountMatchCategories ||
-  //         new Date(b["pubDate"][0]) - new Date(a["pubDate"][0])
-  //       );
-  //     });
-
-  //     return RecommendedPodcast;
-  //   };
-
-  //   const searchLatestPodcast = (posts, amountToReturn) => {
-  //     const podcast = [];
-
-  //     podcast.push({
-  //       ...posts[0],
-  //       latest: true,
-  //       id: 0,
-  //     });
-
-  //     const categories = [
-  //       "the-rolistes-podcast",
-  //       "the-rolistes-present",
-  //       "cafe-rolistes",
-  //       "film-studies",
-  //     ];
-
-  //     let indexPost = 0;
-
-  //     for (let i = 0; i < categories.length; i++) {
-  //       indexPost = searchPostBasedOnCategory(posts, categories[i]);
-
-  //       podcast.push({
-  //         ...posts[indexPost],
-  //         latest: true,
-  //         id: i + 1,
-  //       });
-  //     }
-
-  //     return podcast;
-  //   };
 
   useEffect(() => {
     if (props.type === "PODCAST") {
@@ -190,12 +31,10 @@ const Posts = (props) => {
   //   if (!props.loading & props.loaded) {
   switch (props.type) {
     case "NEWS":
-      console.log("News");
       const currentNews = props.news.slice(
         props.indexOfFirstPost,
         props.indexOfLastPost
       );
-      console.log(currentNews);
       posts = currentNews.map((news) => (
         <Post
           key={news.id}
@@ -212,7 +51,6 @@ const Posts = (props) => {
       break;
 
     case "GONDO":
-      console.log("Gondo");
       const currentParisGondo = props.gondo.slice(
         props.indexOfFirstPost,
         props.indexOfLastPost
@@ -234,7 +72,6 @@ const Posts = (props) => {
       break;
 
     case "PODCAST":
-      console.log("Podcast");
       const currentPodcast = searchPostsBasedOnCategory(
         props.podcast,
         props.filterCategory
@@ -255,7 +92,6 @@ const Posts = (props) => {
       break;
 
     case "INTROGONDO":
-      console.log("Intro");
       const introGondo = props.introGondo;
       posts = (
         <FullPost
@@ -271,7 +107,6 @@ const Posts = (props) => {
       break;
 
     case "ABOUT":
-      console.log("About");
       const about = props.about;
       posts = (
         <AboutPost
@@ -286,7 +121,6 @@ const Posts = (props) => {
       break;
 
     case "THETEAM":
-      console.log("Team");
       const theTeam = props.theTeam;
       posts = theTeam.map((post) => (
         <TeamPost
@@ -301,7 +135,6 @@ const Posts = (props) => {
       break;
 
     case "FULLPOST":
-      console.log("FullPost");
       key = searchPost(props.podcast, props.pageTitle);
       if (key >= 0) {
         const podcast = props.podcast;
@@ -334,31 +167,25 @@ const Posts = (props) => {
       break;
 
     case "LATEST":
-      console.log("Latest");
-      const latestNews = searchLatest(props.news, 5);
-      const latestPodcast = searchLatestPodcast(props.podcast, 5);
-      const latestComingSoon = props.comingSoon[0];
 
       posts = (
         <Fragment>
-          <ComingSoon latestComingSoon={latestComingSoon} />
+          <ComingSoon latestComingSoon={props.latestComingSoon} />
           <Banner />
-          <LatestPodcast podcast={latestPodcast} />
+          <LatestPodcast podcast={props.latestPodcast} />
           <Ads />
-          <LatestNews news={latestNews} />
+          <LatestNews news={props.latestNews} />
         </Fragment>
       );
       break;
 
     case "RECENT":
-      console.log("Recent");
       const recentPosts = searchLatest(props.podcast, 2);
 
       posts = <RecentPosts recentPosts={recentPosts} url={recentPosts.url} />;
       break;
 
     case "RECOMMENDED":
-      console.log("Recommended");
       let recommendedPosts = [];
       key = searchPost(props.podcast, props.pageTitle);
 
@@ -384,7 +211,7 @@ const Posts = (props) => {
       break;
     // }
   }
-  console.log(posts);
+
   return <Fragment>{posts}</Fragment>;
 };
 
