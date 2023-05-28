@@ -62,10 +62,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       fullPost: fullPost,
-      fullPostType : fullPostType,
-      newsId: newsId,
-      news: fetchedPosts.news,
-      gondo: fetchedPosts.gondo,
+      fullPostType : fullPostType
     },
   };
 }
