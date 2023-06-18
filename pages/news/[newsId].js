@@ -28,21 +28,29 @@ function NewsPage(props) {
   // );
 }
 
-export async function getStaticProps(context) {
-  const pageTitle = context.params.newsId;
+async function getData(){
+
   const fs = require("fs");
   const path = require("path");
-  const dataToProcess = fs.readFileSync(
+  const dataToProcess = await fs.readFileSync(
     path.join(process.cwd(), "therolistespodcast.xml")
   );
-
   const fetchedPosts = await fetchPostsHelper(dataToProcess);
+
+  return fetchedPosts;
+}
+
+export async function getStaticProps(context) {
+  const pageTitle = context.params.newsId;
+  
+  const fetchedPosts = await getData();
+
 
   let key = 0;
   let fullPost =[];
   let fullPostType ="";
 
-  key = searchPost(fetchedPosts.podcast, pageTitle);
+  key = await searchPost(fetchedPosts.podcast, pageTitle);
 
   if (key >= 0) {
     fullPost = fetchedPosts.podcast[key]; 
@@ -51,6 +59,10 @@ export async function getStaticProps(context) {
     key = searchPost(fetchedPosts.news, pageTitle);
     fullPost = fetchedPosts.news[key];
     fullPostType   = "NEWS";
+  }
+
+  if (!fullPost) {
+    return { notFound: true };
   }
 
   return {
@@ -62,20 +74,15 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const pageTitle = context.params.newsId;
-  const fs = require("fs");
-  const path = require("path");
-  const dataToProcess = fs.readFileSync(
-    path.join(process.cwd(), "therolistespodcast.xml")
-  );
-  const fetchedPosts = await fetchPostsHelper(dataToProcess);
+   // postName: props.news[key]["wp:post_name"][0]
 
-  const paths = fetchedPosts.map((fetchedPost) => ({
-    params: { fetchedPostId: fetchedPost.postId },
-  }));
+  const fetchedPosts = await getData();  
+
+  const ids = fetchedPosts.news.map(news => news["wp:post_name"][0]);
+  const pathsWithParams = ids.map(id=>({params:{newsId:id}}));
 
   return {
-    paths: paths,
+    paths: pathsWithParams,
     fallback: "blocking",
   };
 }

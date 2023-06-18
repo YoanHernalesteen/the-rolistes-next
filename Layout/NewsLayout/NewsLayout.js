@@ -27,7 +27,7 @@ const NewsLayout = (props) =>
     const indexOfFirstPost = indexOfLastPost - postPerPage;    
 
     const paginate = (pageNumber) => props.onSetCurrentPageNews(pageNumber);
-
+    console.log(props.news);
     return (
         <Fragment>            
             <Head>
