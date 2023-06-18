@@ -44,12 +44,12 @@ export async function getStaticProps(context) {
   const fetchedPosts = await getData();
 
   let fullPostType ="";
-  console.log(pageTitle);
+  // console.log(pageTitle);
  
   const key = await searchPost(fetchedPosts.news, pageTitle);
   const fullPost = fetchedPosts.news[key];
-  fullPostType   = "NEWS";
-  console.log(fullPost);
+  fullPostType = "FULLPOST";
+  // console.log(fullPost);
   if (!fullPost) {
     return { notFound: true };
   }
@@ -57,7 +57,8 @@ export async function getStaticProps(context) {
   return {
     props: {
       fullPost: fullPost,
-      fullPostType : fullPostType
+      type: fullPostType,
+      fullPostType: fullPostType
     },
   };
 }
