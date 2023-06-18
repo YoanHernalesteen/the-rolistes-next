@@ -5,10 +5,6 @@ import { useRouter } from "next/router";
 
 import {
   searchPost,
-  searchLatest,
-  searchPostsBasedOnCategory,
-  searchRecommendedPosts,
-  searchLatestPodcast,
   fetchPostsHelper,
 } from "../../helpers/api-util.js";
 
@@ -56,8 +52,6 @@ export async function getStaticProps(context) {
     fullPost = fetchedPosts.news[key];
     fullPostType   = "NEWS";
   }
-
-  console.log(fullPost);
 
   return {
     props: {

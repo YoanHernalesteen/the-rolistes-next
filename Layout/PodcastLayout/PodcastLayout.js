@@ -21,6 +21,9 @@ const PodcastLayout = (props) => {
   // const categoryId = params.get("cat");
   const categoryId = "podcast";
 
+  // NEW STUFF TO SOLVE
+  const activePagePodcast= props.podcast;
+
   const postPerPage = 24;
   const indexOfLastPost = props.currentPagePodcast * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
@@ -226,13 +229,13 @@ const PodcastLayout = (props) => {
             <Posts
               {...props}
               type="PODCAST"
+              activePagePodcast = {activePagePodcast}
               filterCategory={props.currentCategoryPodcast}
               indexOfFirstPost={indexOfFirstPost}
               indexOfLastPost={indexOfLastPost}
             />
           </Row>
           <PaginationList
-            // totalRecords={props.podcast.length}
             totalRecords={props.currentCategorySize}
             pageLimit={postPerPage}
             clicked={paginate}
@@ -249,7 +252,7 @@ const mapStateToProps = (state) => {
   return {
     currentPagePodcast: state.posts.currentPagePodcast,
     currentCategoryPodcast: state.posts.currentCategoryPodcast,
-    currentCategorySize: state.posts.currentCategorySize,
+    // currentCategorySize: state.posts.currentCategorySize,
   };
 };
 

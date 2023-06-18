@@ -14,10 +14,15 @@ import { connect } from "react-redux";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import ComingSoon from "../../components/ComingSoon/ComingSoon";
 import Banner from "../../components/UI/Banner/Banner";
-import { searchPost, searchLatest, searchPostsBasedOnCategory, searchRecommendedPosts, searchLatestPodcast } from "../../helpers/api-util.js";
+import {
+  searchPost,
+  searchLatest,
+  searchPostsBasedOnCategory,
+  searchRecommendedPosts,
+  searchLatestPodcast,
+} from "../../helpers/api-util.js";
 
 const Posts = (props) => {
-
   let sizePodcast = 1;
   let posts;
   let key = 0;
@@ -34,6 +39,7 @@ const Posts = (props) => {
         props.indexOfFirstPost,
         props.indexOfLastPost
       );
+
       posts = currentNews.map((news) => (
         <Post
           key={news.id}
@@ -70,11 +76,17 @@ const Posts = (props) => {
       ));
       break;
 
-    case "PODCAST":    
-      const currentPodcast = searchPostsBasedOnCategory(
-        props.podcast,
-        props.filterCategory
-      ).slice(props.indexOfFirstPost, props.indexOfLastPost);      
+    case "PODCAST":
+      // C EST ICI QUE CA CASSE - VOIR POUR FAIRE LE TRI AILLEURS SUR LA PAGE D ORIGINE
+      // const currentPodcast = searchPostsBasedOnCategory(
+      //   props.podcast,
+      //   props.filterCategory
+      // ).slice(props.indexOfFirstPost, props.indexOfLastPost);
+
+      const currentPodcast = props.activePagePodcast.slice(
+        props.indexOfFirstPost,
+        props.indexOfLastPost
+      );     
 
       sizePodcast = currentPodcast.length;
       posts = currentPodcast.map((podcast) => (
@@ -133,7 +145,7 @@ const Posts = (props) => {
       ));
       break;
 
-    case "FULLPOST":      
+    case "FULLPOST":
       posts = (
         <FullPost
           key={props.fullPost.id}
@@ -143,11 +155,11 @@ const Posts = (props) => {
           content={props.fullPost["content:encoded"][0]}
           date={props.fullPost["pubDate"][0]}
           type={props.fullPostType}
-        />);
+        />
+      );
       break;
 
     case "LATEST":
-
       posts = (
         <Fragment>
           <ComingSoon latestComingSoon={props.latestComingSoon} />
