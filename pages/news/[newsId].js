@@ -17,8 +17,6 @@ function NewsPage(props) {
 
   useEffect(() => {}, [router.isReady]);
 
-  const newsId = router.query.newsId;
-
   <PostLayout {...props} type="FULLPOST" />;
 
   // return newsId ? (
@@ -45,22 +43,13 @@ export async function getStaticProps(context) {
   
   const fetchedPosts = await getData();
 
-
-  let key = 0;
-  let fullPost =[];
   let fullPostType ="";
-
-  key = await searchPost(fetchedPosts.podcast, pageTitle);
-
-  if (key >= 0) {
-    fullPost = fetchedPosts.podcast[key]; 
-    fullPostType   = "PODCAST";
-  } else {
-    key = searchPost(fetchedPosts.news, pageTitle);
-    fullPost = fetchedPosts.news[key];
-    fullPostType   = "NEWS";
-  }
-
+  console.log(pageTitle);
+ 
+  const key = await searchPost(fetchedPosts.news, pageTitle);
+  const fullPost = fetchedPosts.news[key];
+  fullPostType   = "NEWS";
+  console.log(fullPost);
   if (!fullPost) {
     return { notFound: true };
   }
