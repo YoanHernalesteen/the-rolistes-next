@@ -271,7 +271,7 @@ export async function fetchPostsHelper(dataToProcess) {
   };
 }
 
-export const searchPost = (posts, pageTitle) => {
+export async function searchPost (posts, pageTitle) {
   for (let i = 0; i < posts.length; i++) {
     if (posts[i]["wp:post_name"][0] === pageTitle) {
       return i;
