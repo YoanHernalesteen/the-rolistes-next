@@ -19,7 +19,7 @@ function NewsPage(props) {
 
   useEffect(() => {}, [router.isReady]);
 
-  <PostLayout {...props} type="FULLPOST" />;
+  return <PostLayout {...props} type="FULLPOST" />;
 
   // return newsId ? (
   //   <PostLayout {...props} type="FULLPOST" postId={newsId} />
