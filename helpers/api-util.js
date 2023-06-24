@@ -1,5 +1,218 @@
 const missingIMG = "/images/Logo_Nav_Missing.jpg";
 
+const catValue0 = [
+  "london",
+  "united-kingdom",
+  "british",
+  "tabletop-rpg",
+  "immigrants",
+  "gry-fabularne",
+  "roolipelaaja",
+  "asztali-szerepjatek",
+  "roolipeli",
+  "fandoms",
+  "joc-de-rol",
+  "rollenspiel",
+  "rollenspel",
+  "jogo-de-interpretacao",
+  "jugador-de-rol",
+  "juego-de-rol",
+  "%ed%85%8c%ec%9d%b4%eb%b8%94%ed%83%91-%eb%a1%a4%ed%94%8c%eb%a0%88%ec%9e%89-%ea%b2%8c%ec%9e%84",
+  "gioco-di-ruolo",
+  "bordrollespil",
+  "rpg-de-mesa",
+  "rollspel",
+  "stolna-igra-uloga",
+  "friki",
+  "ropettaja",
+  "jeu-de-role",
+  "Geek",
+  "Expats",
+  "%e6%a1%8c%e4%b8%8a%e8%a7%92%e8%89%b2%e6%89%ae%e6%bc%94%e9%81%8a%e6%88%b2",
+  "%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%83%88%e3%83%bc%e3%82%afrpg",
+  "pnp",
+  "pen-and-paper",
+];
+const catValue2 = [
+  "Nephilim",
+  "dungeons_dragons",
+  "dungeons_and_dragons",
+  "in_nomine_satanis",
+  "ins-mv",
+  "nibiru",
+  "dnd",
+  "pathfinder",
+  "star_trek",
+  "2d20",
+  "call_of_cthulhu",
+  "cthulhu_dark",
+  "13th_age",
+  "tales_from_the_loop",
+  "symbaroum",
+  "aquelarre",
+  "guildes-eldorado",
+  "star-wars",
+  "james-bond",
+  "a-song-of-ice-and-fire",
+  "shadows-of-esteren",
+  "dr-who",
+  "cthulhu-britanica",
+  "runequest",
+  "glorantha",
+  "heroquest",
+];
+const catValue3 = [
+  "phoenix-games-club",
+  "role-play-haven",
+  "free-league-publishing",
+  "paizo",
+  "rowan-rook-decard",
+  "pelgrane-press",
+  "fria-ligan",
+  "chaosium",
+  "modiphius",
+  "london-rpg-community",
+  "no-more-damsels",
+  "monte-cook-games",
+  "guilde-des-rolistes-francophones-de-londres",
+  "multisim",
+  "london-indie-rpg",
+  "cubicle-7",
+  "the-formal-gamer",
+  "critical-role",
+  "wotan-games",
+  "faraos-sigarer",
+  "wizards-of-the-coast",
+  "the-grognard-files",
+  "supaéro",
+];
+const catValue4 = [
+  "july",
+  "lee",
+  "gully",
+  "mira",
+  "lloyd-gyan",
+  "grant-howitt",
+  "kat",
+  "persephelia",
+  "bec-hill",
+  "sam-webb",
+  "garry-harper",
+  "virginia-page",
+  "dan-marriott",
+  "allan-cudicio",
+  "zaire-lanier",
+  "diogo-nogueira",
+  "craig-campbel",
+  "pam-punzalan",
+  "anjuli-smith",
+  "michaël-ghelfi",
+  "gaël-sacré",
+  "sean-hunt",
+  "craig-duffy",
+  "mira-manga",
+  "dominic-mcdowall",
+  "dirk-the-dice",
+  "chris-spivey",
+  "amit-moshe",
+  "guillaume-jentey",
+  "kiel-chenier",
+  "chris-birch",
+  "aimee-carter",
+  "andrew-peregrine",
+  "jason-bulmahn",
+  "jevin-lovecraft",
+  "joao-mariano",
+  "mikel-matthews",
+  "eric-nieudan",
+  "dimitris-r-havlidis",
+  "janet-forbes",
+  "erik-bernhardt",
+  "krister-sundelin",
+  "rupert-greyling",
+  "sara-thompson",
+  "paco-g-jaen",
+  "helen-gould",
+  "willem-van-der-horst",
+  "willem",
+  "david-scott",
+  "ian-cooper",
+  "naomi-clarke",
+  "robin-d-laws",
+  "monte-cook",
+  "alessio-cavatore",
+  "mattias-johnsson",
+  "federico-sohns",
+  "james-wallis",
+  "scott-brown",
+  "ellie-sparrow",
+  "richard-kirke",
+  "conrad-leaton-gray",
+  "amanda-hamon-kunz",
+  "kat-cowles",
+  "kenneth-hite",
+  "fiona-howat",
+  "dany-roth",
+  "todd-nathanson",
+  "brian-wayne-foster",
+  "liam-obrien",
+  "marisha-ray",
+  "sam-riegel",
+  "becky-annison",
+  "lynne-hardy",
+  "cat-tobin",
+  "jason-pitre",
+  "christopher-taylor",
+  "ruty-rutenberg",
+  "satine-phoenix",
+  "tom-cantwell",
+  "michael-ross",
+  "cany",
+  "kundin",
+  "haqadosch",
+  "kanard",
+  "james",
+  "persephelia",
+  "federica",
+  "nelyhann",
+  "porter-williams",
+  "oliver-brooks",
+  "andrew-dacey",
+  "dominic-mcdowall",
+  "aora",
+  "rae",
+  "nala",
+  "fouc",
+];
+const catValue5 = [
+  "so-frenchy",
+  "paris",
+  "barcelona",
+  "copenhague",
+  "washington-dc",
+  "dragonmeet",
+  "uk-games-expo",
+  "ukge",
+  "grogmeet",
+  "session-zero-con",
+  "cyberconv",
+  "florence",
+  "italy",
+  "portugal",
+  "spain",
+  "out-at-the-movies",
+  "london-rpg-clubs",
+  "actual-play",
+  "convention",
+  "horror-movie",
+  "halloween",
+  "rpg-club",
+  "rolistes-abroad",
+  "london-rpg-clubs",
+  "food",
+  "larp",
+];
+
 const getAttachmentURL = (attachments, postMeta) => {
   let attachmentId = 0;
 
@@ -271,26 +484,26 @@ export async function fetchPostsHelper(dataToProcess) {
   };
 }
 
-export async function searchPost (posts, pageTitle) {
+export async function searchPost(posts, pageTitle) {
   for (let i = 0; i < posts.length; i++) {
     if (posts[i]["wp:post_name"][0] === pageTitle) {
       return i;
     }
   }
-};
+}
 
-export async function searchLatest (posts, amountToReturn)  {
+export async function searchLatest(posts, amountToReturn) {
   const news = [];
   for (let i = 0; i < amountToReturn; i++) {
-      news.push({
-        ...posts[i],
-        latest: i == 0 ? true : false,
-        id: i,
-      });
+    news.push({
+      ...posts[i],
+      latest: i == 0 ? true : false,
+      id: i,
+    });
   }
 
   return news;
-};
+}
 
 const searchPostBasedOnCategory = (posts, category) => {
   for (let i = 1; i < posts.length; i++) {
@@ -302,7 +515,7 @@ const searchPostBasedOnCategory = (posts, category) => {
   }
 };
 
-export async function searchPostsBasedOnCategory (posts, category) {
+export async function searchPostsBasedOnCategory(posts, category) {
   const postsFromCategory = [];
 
   for (let i = 0; i < posts.length; i++) {
@@ -315,41 +528,41 @@ export async function searchPostsBasedOnCategory (posts, category) {
 
   // sizePodcast = postsFromCategory.length;
   return postsFromCategory;
-};
+}
 
 const getValueCategory = (relatedCategory) => {
   let valueCategory = 1;
 
-  for (let i = 0; i < props.catValue0.length; i++) {
-    if (props.catValue0[i] === relatedCategory) {
+  for (let i = 0; i < catValue0.length; i++) {
+    if (catValue0[i] === relatedCategory) {
       valueCategory = 0;
       return valueCategory;
     }
   }
 
-  for (let i = 0; i < props.catValue2.length; i++) {
-    if (props.catValue2[i] === relatedCategory) {
+  for (let i = 0; i < catValue2.length; i++) {
+    if (catValue2[i] === relatedCategory) {
       valueCategory = 2;
       return valueCategory;
     }
   }
 
-  for (let i = 0; i < props.catValue3.length; i++) {
-    if (props.catValue3[i] === relatedCategory) {
+  for (let i = 0; i < catValue3.length; i++) {
+    if (catValue3[i] === relatedCategory) {
       valueCategory = 3;
       return valueCategory;
     }
   }
 
-  for (let i = 0; i < props.catValue4.length; i++) {
-    if (props.catValue4[i] === relatedCategory) {
+  for (let i = 0; i < catValue4.length; i++) {
+    if (catValue4[i] === relatedCategory) {
       valueCategory = 4;
       return valueCategory;
     }
   }
 
-  for (let i = 0; i < props.catValue5.length; i++) {
-    if (props.catValue5[i] === relatedCategory) {
+  for (let i = 0; i < catValue5.length; i++) {
+    if (catValue5[i] === relatedCategory) {
       valueCategory = 5;
       return valueCategory;
     }
@@ -358,7 +571,7 @@ const getValueCategory = (relatedCategory) => {
   return valueCategory;
 };
 
-export const searchRecommendedPosts = (postToRead, posts) => {
+export async function searchRecommendedPosts(postToRead, posts) {
   const RecommendedPodcast = [];
 
   for (let i = 0; i < posts.length; i++) {
@@ -393,11 +606,11 @@ export const searchRecommendedPosts = (postToRead, posts) => {
       new Date(b["pubDate"][0]) - new Date(a["pubDate"][0])
     );
   });
+  
+  return RecommendedPodcast.slice(0, 2);
+}
 
-  return RecommendedPodcast;
-};
-
-export async function searchLatestPodcast (posts, amountToReturn) {
+export async function searchLatestPodcast(posts, amountToReturn) {
   const podcast = [];
 
   podcast.push({
@@ -426,4 +639,4 @@ export async function searchLatestPodcast (posts, amountToReturn) {
   }
 
   return podcast;
-};
+}

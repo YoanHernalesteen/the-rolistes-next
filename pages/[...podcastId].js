@@ -6,9 +6,7 @@ import { useRouter } from "next/router";
 import {
   searchPost,
   searchLatest,
-  searchPostsBasedOnCategory,
   searchRecommendedPosts,
-  searchLatestPodcast,
   fetchPostsHelper,
 } from "../helpers/api-util.js";
 
@@ -41,27 +39,27 @@ async function getData() {
 
 export async function getStaticProps(context) {
   const podcastId = context.params.podcastId;
-
-  const podcastYear = podcastId[0];
-  const podcastMonth = podcastId[1];
-  const podcastDay = podcastId[2];
   const podcastTitle = podcastId[3];
-
-  // console.log(podcastYear + "+" +podcastMonth + "+" +podcastDay + "+" +podcastTitle);
 
   const fetchedPosts = await getData();
 
   const key = await searchPost(fetchedPosts.podcast, podcastTitle);
   const fullPost = fetchedPosts.podcast[key];
   const fullPostType = "FULLPOST";
+  const recommendedPosts = await searchRecommendedPosts(
+    fetchedPosts.podcast[key],
+    fetchedPosts.podcast
+  );
+  const recentPosts = await searchLatest(fetchedPosts.podcast, 2);
 
-  // console.log(fullPost);
   if (!fullPost) {
     return { notFound: true };
   }
 
   return {
     props: {
+      recommendedPosts: recommendedPosts,
+      recentPosts: recentPosts,
       fullPost: fullPost,
       type: fullPostType,
       fullPostType: fullPostType,

@@ -39,12 +39,12 @@ const PostLayout = (props) => {
                             {/* <Col xs={12} className={globalClasses.no_padding_smallscreen}>
                                 <Subscribe />
                             </Col>    */}
-                            {/* <Col xs={12} className={"no_padding_smallscreen"}>
-                                <Posts type="RECOMMENDED" postType={props.type} pageTitle={pageId}/>
+                            <Col xs={12} className={"no_padding_smallscreen"}>
+                                <Posts {...props} type="RECOMMENDED" postType={props.type} pageTitle={pageId}/>
                             </Col>  
                             <Col xs={12} className={"no_padding_smallscreen"}>
-                                <Posts type="RECENT" postType={props.type}/>
-                            </Col>                   */}
+                                <Posts {...props} type="RECENT" postType={props.type}/>
+                            </Col>                  
                         </Row>                    
                     </Col>
                 </Row>

@@ -171,33 +171,15 @@ const Posts = (props) => {
       );
       break;
 
-    case "RECENT":
-      const recentPosts = searchLatest(props.podcast, 2);
-
-      posts = <RecentPosts recentPosts={recentPosts} url={recentPosts.url} />;
+    case "RECENT":      
+      posts = <RecentPosts recentPosts={props.recentPosts} url={props.recentPosts.url} />;
       break;
 
-    case "RECOMMENDED":
-      let recommendedPosts = [];
-      key = searchPost(props.podcast, props.pageTitle);
-
-      if (key >= 0) {
-        recommendedPosts = searchRecommendedPosts(
-          props.podcast[key],
-          props.podcast
-        ).slice(0, 2);
-      } else {
-        key = searchPost(props.news, props.pageTitle);
-        recommendedPosts = searchRecommendedPosts(
-          props.news[key],
-          props.podcast
-        ).slice(0, 2);
-      }
-
+    case "RECOMMENDED":      
       posts = (
         <RecommendedPosts
-          recommendedPosts={recommendedPosts}
-          url={recommendedPosts.url}
+          recommendedPosts={props.recommendedPosts}
+          url={props.recommendedPosts.url}
         />
       );
       break;

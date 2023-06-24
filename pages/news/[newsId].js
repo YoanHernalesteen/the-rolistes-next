@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 
 import {
   searchPost,
+  searchLatest,
+  searchRecommendedPosts,
   fetchPostsHelper,
 } from "../../helpers/api-util.js";
 
@@ -48,6 +50,11 @@ export async function getStaticProps(context) {
   const key = await searchPost(fetchedPosts.news, pageTitle);
   const fullPost = fetchedPosts.news[key];
   const fullPostType = "FULLPOST";
+  const recommendedPosts = await searchRecommendedPosts(
+    fetchedPosts.news[key],
+    fetchedPosts.podcast
+  );
+  const recentPosts = await searchLatest(fetchedPosts.podcast, 2);
   // console.log(fullPost);
   if (!fullPost) {
     return { notFound: true };
@@ -55,6 +62,8 @@ export async function getStaticProps(context) {
 
   return {
     props: {
+      recommendedPosts: recommendedPosts,
+      recentPosts: recentPosts,
       fullPost: fullPost,
       type: fullPostType,
       fullPostType: fullPostType
@@ -63,15 +72,12 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-   // postName: props.news[key]["wp:post_name"][0]
 
-  const fetchedPosts = await getData();  
-  // console.log(fetchedPosts);
+  const fetchedPosts = await getData(); 
 
   const ids = fetchedPosts.news.map(news =>news["wp:post_name"][0]);
-  // console.log(ids);
   const pathsWithParams = ids.map(id=>({params:{newsId:id}}));
-// console.log(pathsWithParams);
+
   return {
     paths: pathsWithParams,
     fallback: "blocking",
