@@ -3,7 +3,14 @@ import PostLayout from "../Layout/PostLayout/PostLayout";
 import Spinner from "../components/UI/Spinner/Spinner";
 import { useRouter } from "next/router";
 
-import { searchPost, searchLatest, searchPostsBasedOnCategory, searchRecommendedPosts, searchLatestPodcast,fetchPostsHelper } from "../helpers/api-util.js";
+import {
+  searchPost,
+  searchLatest,
+  searchPostsBasedOnCategory,
+  searchRecommendedPosts,
+  searchLatestPodcast,
+  fetchPostsHelper,
+} from "../helpers/api-util.js";
 
 function PodcastPage(props) {
   useEffect(() => {
@@ -14,68 +21,76 @@ function PodcastPage(props) {
 
   useEffect(() => {}, [router.isReady]);
 
-  const filterData = router.query.podcastId;
-
   // if (!filterData) {
   //   return <Spinner />;
   // }
 
-  const podcastYear = filterData[0];
-  const podcastMonth = filterData[1];
-  const podcastDay = filterData[2];
-  const podcastId = filterData[3];
-
-  return <PostLayout {...props} type="FULLPOST" postId={podcastId} />;
+  return <PostLayout {...props} type="FULLPOST" />;
 }
 
-// export async function getStaticProps() {
-//   return {
-//     props: {
-//       podcastId:
-//       {
-//         podcastYear: "2020",
-//         podcastMonth: "12",
-//         podcastDay: "28",
-//         podcastId:
-//           "the-rolistes-present-metatopia-ttrpgs-english-as-our-vehicular-language-beyond-the-american-culture-online",
-//       },
-//     },
-//   };
-// }
+async function getData() {
+  const fs = require("fs");
+  const path = require("path");
+  const dataToProcess = await fs.readFileSync(
+    path.join(process.cwd(), "therolistespodcast.xml")
+  );
+  const fetchedPosts = await fetchPostsHelper(dataToProcess);
 
-// export async function getStaticProps() {
-//   const fetchedPosts = await fetchPostsHelper();
+  return fetchedPosts;
+}
 
-//   return {
-//     props: {
-//       posts: fetchedPosts.posts,
-//       news: fetchedPosts.news,
-//       podcast: fetchedPosts.podcast,
-//       gondo: fetchedPosts.gondo,
-//       introGondo: fetchedPosts.introGondo,
-//       about: fetchedPosts.about,
-//       theTeam: fetchedPosts.theTeam,
-//       comingSoon: fetchedPosts.comingSoon,
-//     },
-//   };
-// }
+export async function getStaticProps(context) {
+  const podcastId = context.params.podcastId;
 
-// export async function getStaticPaths() {
-//   return {
-//     paths: [
-//       {
-//         params: {
-//           podcastId: [
-//             "2020",
-//             "12",
-//             "28",
-//             "the-rolistes-present-metatopia-ttrpgs-english-as-our-vehicular-language-beyond-the-american-culture-online",
-//           ],
-//         },
-//       },
-//     ],
-//     fallback: "blocking",
-//   };
-// }
+  const podcastYear = podcastId[0];
+  const podcastMonth = podcastId[1];
+  const podcastDay = podcastId[2];
+  const podcastTitle = podcastId[3];
+
+  // console.log(podcastYear + "+" +podcastMonth + "+" +podcastDay + "+" +podcastTitle);
+
+  const fetchedPosts = await getData();
+
+  const key = await searchPost(fetchedPosts.podcast, podcastTitle);
+  const fullPost = fetchedPosts.podcast[key];
+  const fullPostType = "FULLPOST";
+
+  // console.log(fullPost);
+  if (!fullPost) {
+    return { notFound: true };
+  }
+
+  return {
+    props: {
+      fullPost: fullPost,
+      type: fullPostType,
+      fullPostType: fullPostType,
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  const fetchedPosts = await getData();
+
+  const ids = fetchedPosts.podcast.map((podcast) => {
+    const tempDate = new Date(podcast["pubDate"][0]);
+    const year = String(tempDate.getFullYear());
+    const month = String(tempDate.getMonth() + 1);
+    const day = String(tempDate.getDate());
+    return [year, month, day, podcast["wp:post_name"][0]];
+  });
+
+  // console.log(ids);
+  const pathsWithParams = ids.map((id) => ({
+    params: {
+      podcastId: [id[0], id[1], id[2], id[3]],
+    },
+  }));
+
+  return {
+    paths: pathsWithParams,
+    fallback: "blocking",
+  };
+}
 
 export default PodcastPage;

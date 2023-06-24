@@ -43,12 +43,11 @@ export async function getStaticProps(context) {
   
   const fetchedPosts = await getData();
 
-  let fullPostType ="";
   // console.log(pageTitle);
  
   const key = await searchPost(fetchedPosts.news, pageTitle);
   const fullPost = fetchedPosts.news[key];
-  fullPostType = "FULLPOST";
+  const fullPostType = "FULLPOST";
   // console.log(fullPost);
   if (!fullPost) {
     return { notFound: true };
@@ -67,10 +66,12 @@ export async function getStaticPaths() {
    // postName: props.news[key]["wp:post_name"][0]
 
   const fetchedPosts = await getData();  
+  // console.log(fetchedPosts);
 
-  const ids = fetchedPosts.news.map(news => news["wp:post_name"][0]);
+  const ids = fetchedPosts.news.map(news =>news["wp:post_name"][0]);
+  // console.log(ids);
   const pathsWithParams = ids.map(id=>({params:{newsId:id}}));
-
+// console.log(pathsWithParams);
   return {
     paths: pathsWithParams,
     fallback: "blocking",
