@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",    
+    "deploy": "gh-pages -d build",
+    "rss": "node src/generateRSSFeed.js",
+    "rss-deploy": "node src/generateRSSFeed.js && react-scripts build && gh-pages -d build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
