@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",    
+    "lint": "next lint",
     "deploy": "gh-pages -d build",
     "rss": "node src/generateRSSFeed.js",
     "rss-deploy": "node src/generateRSSFeed.js && react-scripts build && gh-pages -d build"
@@ -27,12 +27,13 @@
     "react-ga": "^3.3.1",
     "react-redux": "^8.0.5",
     "redux-thunk": "^2.4.2",
+    "rss": "^1.2.2",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
     "eslint": "8.30.0",
-    "eslint-config-next": "13.1.1",
-    "gh-pages": "^4.0.0",
+    "eslint-config-next": "^12.0.4",
+    "gh-pages": "^3.0.0",
     "xml-loader": "^1.2.1"
   }
 }
